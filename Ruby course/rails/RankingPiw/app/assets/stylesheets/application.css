@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body
+ {
+ 	margin: 0px;
+ 	width: 1000px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	background-color: black;
+ 	color:white;
+
+ }
+
+h1
+{
+	padding: 20px;
+	background-color: white;
+	margin: 0px;
+	background-color: black;
+	text-align: center;
+	color:white;
+}
+#content
+ {
+ 	margin: 0px;
+ 	background-color: white;
+ 	padding: 15px;
+ 	border-right: 2px solid black;
+ 	border-left: 2px solid black;
+ 	min-height: 1000px;
+ 	color:black;
+ 	
+ }
+
+ a
+ {
+ 	text-decoration: none;
+ 	color: inherit;
+
+ }
+
+footer
+{
+	color:white;
+}
+
+.beer
+{
+	border-bottom: 2px dotted grey;
+	position:relative;
+	padding: 5px;
+}
+
+.info
+{
+	display:inline-block;
+	height:200px;
+	position:absolute; 
+	top: 50%;
+	margin-top: -100px;
+}
+
+.beer_img
+{
+	width:200px;
+	height:200px;
+}
+
+footer
+{
+	padding: 10px;
+}
+
+nav
+{
+	padding: 10px;
+}
+
+ul>li
+{
+	list-style-type: none;
+	padding: 3px;
+	font-weight: 600;
+}
+
+ol>li
+{
+	padding: 3px;
+	font-weight: 600;
+}
+
+.comment
+{
+	border: 1px solid grey;
+	padding: 15px;
+}

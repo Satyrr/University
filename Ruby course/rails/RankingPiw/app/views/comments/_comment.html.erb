@@ -1,0 +1,20 @@
+
+<div class="comment">
+<p>
+  <strong>Komentujący:</strong>
+  <%= comment.commenter %>
+</p>
+ 
+<p>
+  <strong>Komentarz:</strong>
+  <%= comment.body %>
+</p>
+<%if logged_in? %>
+<p>
+  <i><b><%= link_to 'Usuń komentarz', [comment.beer, comment],
+               method: :delete,
+               data: { confirm: 'Czy jesteś pewien?' } %>
+  </b></i>
+</p>
+<% end %>
+</div>

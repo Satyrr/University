@@ -1,0 +1,10 @@
+<header>
+	<h1>Edycja użytkownika</h1>
+</header>
+
+<div id="content">
+	<%= render 'form', user: @user %>
+
+	<i><b><%= link_to 'Pokaż', @user %></b></i><br> 
+	<i><b><%= link_to 'Powrót', users_path %></b></i>
+</div>

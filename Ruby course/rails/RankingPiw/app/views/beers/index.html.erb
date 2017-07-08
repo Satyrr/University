@@ -1,0 +1,39 @@
+<header>
+	<h1>Baza piw</h1>
+</header>
+
+<div id="content">
+	<nav>
+		<ul>
+			<li><%= link_to "Ranking", ranking_path %></li>
+			<li><%= link_to "Dodaj piwo", new_beer_path %></li>
+			<li><%= link_to "Dodaj typ piwa", new_type_path %></li>
+			<li><%= link_to "Wyświetl typy piwa", types_path %></li>
+		</ul>
+	</nav>
+
+	<% @beers.each do |beer| %>
+		<div class="beer">
+		  <a href="<%= beer_path(beer) %>">
+			  <%= image_tag beer.img, class: "beer_img" %>
+		  </a>
+		  <div class="info">
+		  	  <p><strong><%= beer.title %></strong></p>
+			  <p><strong>Typ: </strong><%= beer.type.title %></p>
+			  <p><strong>Browar:</strong><%= beer.brewery %></p>
+			  <p><strong>Alk: </strong><%= beer.alc.to_s + "%" %></p>
+			  <p><strong>Ocena:</strong><%= beer.score.to_s %></p>
+		  </div>
+
+		  <div>
+			  <p><strong><%= link_to "Edytuj", edit_beer_path(beer) %></strong></p>
+			  <p><strong><%= link_to 'Usuń', beer_path(beer),
+			              method: :delete,
+			              data: { confirm: 'Jesteś pewien?' } %></strong></p>
+		  </div>
+
+
+		</div>
+	<% end %>
+</div>
+

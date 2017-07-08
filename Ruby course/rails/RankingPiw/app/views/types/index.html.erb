@@ -1,0 +1,18 @@
+<header>
+	<h1>Typy piwa</h1>
+</header>
+
+<div id="content">
+	<ol>
+		<% @types.each do |type| %>
+		  <li><%= type.title %>
+		  <i>(<%= link_to "Edytuj", edit_type_path(type) %>)</i>
+		  <i>(<%= link_to 'Usuń', type_path(type),
+		              method: :delete,
+		              data: { confirm: 'Jesteś pewien?' } %>)</i>
+		  </li>
+		<% end %>
+	</ol>
+	<b><i><%= link_to "Dodaj typ", new_type_path%></i></b>
+	<b><i><%= link_to "Powrót", beers_path%></i></b>
+</div>

@@ -1,0 +1,64 @@
+<header>
+  <h1>
+    <%= @beer.title%>
+  </h1>
+</header>
+
+<div id="content">
+
+<div style="display:inline-block">
+  <p>
+    <%= image_tag @beer.img %>
+  </p>
+
+  <p>
+    <strong>Opis:</strong>
+    <%= @beer.description %>
+  </p>
+
+  <p>
+    <strong>Browar:</strong>
+    <%= @beer.brewery %>
+  </p>
+
+  <p>
+    <strong>Alk.(%):</strong>
+    <%= @beer.alc %>
+  </p>
+
+  <p>
+    <strong>Typ:</strong>
+    <%= @beer.type[:title] %>
+  </p>
+
+  <p>
+    <strong>Ocena:</strong>
+    <%= @beer.score %>
+  </p>
+
+</div>
+
+<div style="display:inline-block">
+  <h2>Wystaw ocenę:</h2>
+  <%= form_for([@beer, @beer.votes.build]) do |f| %>
+    <p>
+      <%= f.label :score, "Ocena:" %><br>
+      <%= f.select :score, options_for_select(@scores) %>
+      </p>
+    <p>
+      <%= f.submit "Oceń"%>
+    </p>
+  <% end %>
+</div>
+  <h2>Opinie</h2>
+  <%= render @beer.comments %>
+
+  <h2>Dodaj opinię:</h2>
+  <%= render 'comments/form' %>
+
+  <strong><%= link_to "Powrót", beers_path %></strong><br>
+  <% if logged_in? %>
+  <strong><%= link_to "Edytuj", edit_beer_path(@beer) %></strong>
+  <% end %>
+
+</div>

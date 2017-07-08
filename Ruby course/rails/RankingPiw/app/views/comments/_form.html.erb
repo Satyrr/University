@@ -1,0 +1,13 @@
+<%= form_for([@beer, @beer.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter, "Komentujący" %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body, "Komentarz" %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Dodaj komentarz" %>
+  </p>
+<% end %>

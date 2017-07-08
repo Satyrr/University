@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RankingPiw</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+<footer>
+
+  <% if logged_in? %>
+    <%= link_to "Baza piw", beers_path %><br>
+    <%= link_to "Użytkownicy", users_path%>
+    
+    <i style="float:right"><%= "Zalogowany jako #{current_user.email}" %>
+    <%= link_to "(logout)", logout_path %>
+    </i>
+
+  <% else %>
+  <i style="float:right"><%= "Niezalogowany" %>
+    <%= link_to "(login)", login_path %>
+    </i>
+
+  <% end %>
+</footer>
+  </body>
+</html>

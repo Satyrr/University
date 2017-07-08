@@ -1,0 +1,50 @@
+<%= form_for @beer do |f| %>
+ 
+  <% if @beer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@beer.errors.count, "error") %> prohibited
+        this beer from being saved:
+      </h2>
+      <ul>
+        <% @beer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<p>
+    <strong><%= f.label :title, "Nazwa piwa:" %></strong><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <strong><%= f.label :description, "Opis:" %></strong><br>
+    <%= f.text_area :description %>
+  </p>
+ 
+  <p>
+    <strong><%= f.label :brewery, "Browar:" %></strong><br>
+    <%= f.text_field :brewery %>
+  </p>
+
+  <p>
+    <strong><%= f.label :type_id, "Typ:" %></strong><br>
+    <%= f.select :type_id, options_for_select(@options) %>
+  </p>
+
+  <p>
+    <strong><%= f.label :alc, "Alk.(%):" %></strong><br>
+    <%= f.number_field(:alc, in: 0.0..20.0, step: 0.1) %>
+  </p>
+
+  <p>
+    <strong><%= f.label :img, "Adres obrazka:" %></strong><br>
+    <%= f.text_field :img %>
+  </p>
+ 
+  <p>
+    <strong><%= f.submit "Dodaj piwo"%></strong>
+  </p>
+<% end %>

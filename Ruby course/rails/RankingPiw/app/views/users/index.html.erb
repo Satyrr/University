@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<header>
+  <h1>Użytkownicy</h1>
+</header>
+
+<div id="content">
+  <table>
+    <thead>
+      <tr>
+        <th>Użytkownik</th>
+        <th>Email</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><b>(<%= link_to 'Pokaż', user %></b>)</td>
+          <td><b>(<%= link_to 'Edytuj', edit_user_path(user) %></b>)</td>
+          <td><b>(<%= link_to 'Usuń', user, method: :delete, data: { confirm: 'Jesteś pewien?' } %></b>)</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <b><%= link_to 'Dodaj użytkownika', new_user_path %></b><br>
+  <b><%= link_to 'Powrót', beers_path %></b>
+
+</div>

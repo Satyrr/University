@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Tyskie
+  description:  Klasyczne
+  brewery: Tyskie
+  type: one
+  alc: 1.5
+  img: MyString
+
+two:
+  title: MyString
+  description: MyText
+  brewery: MyString
+  type: two
+  alc: 1.5
+  img: MyString

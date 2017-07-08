@@ -1,0 +1,25 @@
+<header>
+  <h1>Login</h1>
+</header>
+<div id="content">
+
+  <%= form_tag user_sessions_path, :method => :post do %>
+
+    <div class="field">
+      <%= label_tag :email, "Email:" %><br />
+      <%= text_field_tag :email %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password, "Hasło:" %><br />
+      <%= password_field_tag :password %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Login" %>
+    </div>
+  <% end %>
+    
+
+  <b><%= link_to 'Powrót', beers_path %></b>
+  </div>
