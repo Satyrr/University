@@ -1,0 +1,99 @@
+div#game_cointaner
+{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+
+	margin: auto;
+	width:100%;
+	padding: 10px;
+
+	background-color: #0000FF;
+	
+}
+
+span#timer
+{
+	padding: 5px;
+	color: white;
+	font-size: 30px;
+}
+
+span#timer_time
+{
+	display: inline-block;
+
+}
+
+div#restart_button
+{
+	padding:10px;
+	margin:5px;
+	font-size: 30px;
+	color:white;
+	background-color: grey;
+}
+
+div#boxes_cointaner
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+
+	position:relative;
+	top:0; left:0;
+
+	width:1300px;
+	height:800px;
+
+	background-color: #F0F8FF;
+	
+}
+
+div#central_box
+{
+	background-color: red;
+	width:80px;
+	height:80px;
+}
+
+div#central_box:hover
+{
+	background-color: yellow;
+}
+
+div.box
+{
+	position:absolute;
+	background-color: green;
+	width:40px;
+	height:40px;
+}
+
+div.box:hover
+{
+	background-color: orange;
+}
+
+div.visited_box
+{
+	opacity:0.3;
+	border: 1px solid black;
+}
+
+div#bests_container
+{
+	color:white;
+}
+
+.box:nth-child(1){ top:30px; left:20px; }
+.box:nth-child(2){ top:80px; left:1000px; }
+.box:nth-child(3){ top:150px; left:450px; }
+.box:nth-child(4){ top:300px; left:1200px; }
+.box:nth-child(5){ top:450px; left:50px; }
+.box:nth-child(6){ top:400px; left:500px; }
+.box:nth-child(7){ top:680px; left:200px; }
+.box:nth-child(8){ top:711px; left:300px; }
+.box:nth-child(9){ top:600px; left:800px; }
+

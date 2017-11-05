@@ -1,0 +1,20 @@
+label 
+{
+  display: inline-block;
+  width: 110px;
+  text-align: right;
+}
+div
+{
+	padding:4px;
+}
+
+.warning
+{
+	color:red;
+}
+
+input
+{
+	width: 300px;
+}
