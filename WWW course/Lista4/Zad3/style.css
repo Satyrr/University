@@ -44,8 +44,8 @@ div#boxes_cointaner
 	position:relative;
 	top:0; left:0;
 
-	width:1300px;
-	height:800px;
+	width:900px;
+	height:500px;
 
 	background-color: #F0F8FF;
 	
@@ -54,8 +54,8 @@ div#boxes_cointaner
 div#central_box
 {
 	background-color: red;
-	width:80px;
-	height:80px;
+	width:60px;
+	height:60px;
 }
 
 div#central_box:hover
@@ -67,8 +67,8 @@ div.box
 {
 	position:absolute;
 	background-color: green;
-	width:40px;
-	height:40px;
+	width:30px;
+	height:30px;
 }
 
 div.box:hover
@@ -87,13 +87,13 @@ div#bests_container
 	color:white;
 }
 
-.box:nth-child(1){ top:30px; left:20px; }
-.box:nth-child(2){ top:80px; left:1000px; }
-.box:nth-child(3){ top:150px; left:450px; }
-.box:nth-child(4){ top:300px; left:1200px; }
-.box:nth-child(5){ top:450px; left:50px; }
-.box:nth-child(6){ top:400px; left:500px; }
-.box:nth-child(7){ top:680px; left:200px; }
-.box:nth-child(8){ top:711px; left:300px; }
-.box:nth-child(9){ top:600px; left:800px; }
+.box:nth-child(1){ top:0px; left:0px; }
+.box:nth-child(2){ top:0px; left:300px; }
+.box:nth-child(3){ top:0px; left:600px; }
+.box:nth-child(4){ top:165px; left:0px; }
+.box:nth-child(5){ top:165px; left:300px; }
+.box:nth-child(6){ top:165px; left:600px; }
+.box:nth-child(7){ top:330px; left:0px; }
+.box:nth-child(8){ top:330px; left:600px; }
+.box:nth-child(9){ top:330px; left:300px; }
 

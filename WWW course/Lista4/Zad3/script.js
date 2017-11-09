@@ -7,25 +7,44 @@ let gameObject = {
 	boxes: null,
 	penaltyOffTimeout: null,
 	bestTimes: []
-
 }
 
-// start / restart gry
+function init_game()
+{
+	// box positions
+	for(let i=1; i<=9;i++)
+	{
+		let element = document.querySelector(".box:nth-child(" +i+ ")")
+		element.style.top = ((Math.floor((i-1)/3))*165 + (Math.random()*135)) + "px"
+		element.style.left = ((i%3)*300 + (Math.random()*270)) + "px"
+	}
+
+	// session best scores
+	if(localStorage.getItem("bests"))
+	{
+		gameObject.bestTimes = localStorage.getItem("bests").split(',')
+		gameObject.bestTimes.forEach(function(v,i,arr) {
+	   			arr[i] = parseInt(v);
+			})
+		newBestTimes()
+	}
+}
+
 gameObject.gameStart = function()
 {
 
 	document.getElementById("central_box")
-		.addEventListener("mouseover",gameObject.centralBoxEnter)
+		.addEventListener("mouseover",centralBoxEnter)
 
 	document.getElementById("central_box")
-		.addEventListener("mouseout",gameObject.centralBoxLeave)
+		.addEventListener("mouseout",centralBoxLeave)
 
 	if(!gameObject.boxes)
 		gameObject.boxes = document.getElementsByClassName("box")
 
 	for(let box of gameObject.boxes)
 	{
-		box.addEventListener("mouseover",gameObject.boxEnter)
+		box.addEventListener("mouseover",boxEnter)
 		box.className = "box"
 	}
 
@@ -36,7 +55,7 @@ gameObject.gameStart = function()
 
 }
 
-gameObject.restart = function()
+var restart = function()
 {
 	if(gameObject.timerObject)
 		clearInterval(gameObject.timerObject)
@@ -47,25 +66,30 @@ gameObject.restart = function()
 
 }
 
-//koniec gry
 gameObject.gameEnd = function()
 {
 	document.getElementById("central_box")
-		.removeEventListener("mouseover",gameObject.centralBoxEnter)
+		.removeEventListener("mouseover",centralBoxEnter)
 
 	document.getElementById("central_box")
-		.removeEventListener("mouseout",gameObject.centralBoxLeave)
+		.removeEventListener("mouseout",centralBoxLeave)
 
 	for(let box of gameObject.boxes)
 	{
-		box.removeEventListener("mouseover",gameObject.boxEnter)
+		box.removeEventListener("mouseover",boxEnter)
 	}
 
 	if(gameObject.timerObject)
 		clearInterval(gameObject.timerObject)
 
 	gameObject.bestTimes.push(gameObject.timer)
-	gameObject.bestTimes.sort()
+	newBestTimes()
+
+}
+
+function newBestTimes()
+{
+	gameObject.bestTimes.sort((a, b) => a - b)
 
 	document.getElementById("bests").innerHTML = ""
 	for(let time of gameObject.bestTimes)
@@ -75,10 +99,10 @@ gameObject.gameEnd = function()
 
 		document.getElementById("bests").appendChild(newTime)
 	}
-
+	localStorage.setItem("bests", gameObject.bestTimes.toString())
 }
 
-gameObject.centralBoxEnter = function()
+var centralBoxEnter = function()
 {
 	if(gameObject.timerObject)
 		clearInterval(gameObject.timerObject)
@@ -86,12 +110,12 @@ gameObject.centralBoxEnter = function()
 	gameObject.canCheck = true
 }
 
-gameObject.centralBoxLeave = function()
+var centralBoxLeave = function()
 {
 	gameObject.timerObject = setInterval(timer, 10)
 }
 
-gameObject.boxEnter = function()
+var boxEnter = function()
 {
 
 	if(this.classList.contains("visited_box"))
@@ -125,7 +149,8 @@ function timer()
 	gameObject.timerDOMObject.innerHTML = gameObject.timer/100.0
 }
 
+init_game() // boxes position, session best scores
 gameObject.gameStart()
 
 document.getElementById("restart_button")
-	.addEventListener("click",gameObject.restart)
+	.addEventListener("click",restart)
