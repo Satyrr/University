@@ -1,0 +1,26 @@
+div#sliderdiv
+{
+	width: 700px;
+	height: 450px;
+	margin: 20px;
+	border: 2px solid grey;
+	overflow:hidden;
+}
+
+ul.slider
+{
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+li.slide
+{
+	display:none;
+}
+
+img.slideimg
+{
+	width: 700px;
+	height: 450px;
+}

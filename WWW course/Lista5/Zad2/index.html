@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Modal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+  <div id="dialog-form" title="Create new user">
+    <p class="validateTips">Wszystkie pola są wymagane.</p>
+
+    <form>
+      <fieldset>
+        <label for="name">Imię</label>
+        <input type="text" name="name" id="name" value="Jan" class="text ui-widget-content ui-corner-all">
+
+        <label for="surname">Imię</label>
+        <input type="text" name="surname" id="surname" value="Kowalski" class="text ui-widget-content ui-corner-all">
+
+        <label for="city">Miasto</label>
+        <input type="text" name="city" id="city" value="Warszawa" class="text ui-widget-content ui-corner-all">
+
+        <label for="postcode">Kod pocztowy</label>
+        <input type="text" name="postcode" id="postcode" value="00-000" class="text ui-widget-content ui-corner-all">
+
+        <label for="birthday">Data urodzenia</label>
+        <input type="text" name="birthday" id="birthday" value="" class="text ui-widget-content ui-corner-all">
+
+        <!-- Allow form submission with keyboard without duplicating the dialog button -->
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+      </fieldset>
+    </form>
+  </div>
+
+<div id="dialog-confirm" title="Usuń">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Czy na pewno chcesz usunąć użytkownika?</p>
+</div>
+
+  <div id="users-contain" class="ui-widget">
+  <h1>Użytkownicy:</h1>
+    <table id="users" class="ui-widget ui-widget-content">
+      <thead>
+        <tr class="ui-widget-header ">
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>Miasto</th>
+          <th>Kod pocztowy</th>
+          <th>Data urodzenia</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Adam</td>
+          <td>Kowalski</td>
+          <td>Wodzisław</td>
+          <td>54-354</td>
+          <td>25-12-1994 </td>
+          <td><a href="#" class="delete-entry">Usuń</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button id="create-user">Utwórz nowego użytkownika</button>
+  <script src="script.js"></script>
+</body>
+</html>

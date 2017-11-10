@@ -62,8 +62,6 @@ var restart = function()
 
 	gameObject.timerDOMObject.innerHTML = "0"
 	gameObject.gameStart()
-
-
 }
 
 gameObject.gameEnd = function()

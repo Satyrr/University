@@ -1,0 +1,31 @@
+div#dialog-form
+{
+	width:200px;
+	border:3px solid black;
+}
+label, input { display:block; }
+div#users-contain 
+{ 
+	width: 350px;
+	margin: 20px 0; 
+}
+div#users-contain table 
+{
+	margin: 1em 0;
+	border-collapse: collapse;
+	width: 100%; 
+}
+div#users-contain table td, div#users-contain table th 
+{ 
+	border: 1px solid #eee;
+	padding: .6em 10px;
+	text-align: left;
+}
+
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+h1 { font-size: 1.2em; margin: .6em 0; }
+
+a.delete-entry
+{
+	color:black;
+}
