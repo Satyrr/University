@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 import data
+import io
 
 parser = argparse.ArgumentParser(description='PyTorch PennTreeBank RNN/LSTM Language Model')
 
@@ -207,7 +208,7 @@ def evaluate():
         return perp.numpy()
 
 #load model
-with open(model_name, 'rb') as f:
+with io.open(model_name, 'rb') as f:
     model = torch.load(f)
 
 ntokens = len(corpus.dictionary)

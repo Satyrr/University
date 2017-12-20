@@ -11,6 +11,7 @@ from torch.autograd import Variable
 import data
 import model
 import os
+import io
 
 from utils import batchify, get_batch, repackage_hidden, create_exp_dir, save_checkpoint
 
@@ -91,7 +92,7 @@ def logging(s, print_=True, log_=True):
     if print_:
         print(s)
     if log_:
-        with open(log_file, 'a+') as f_log:
+        with io.open(log_file, 'a+') as f_log:
             f_log.write(s + '\n')
 
 if args.dropoutl < 0:
