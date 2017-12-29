@@ -1,0 +1,11 @@
+.animate-div
+{
+	width: 210px;
+	margin: 400px auto;
+	border:3px solid green;
+}
+.animate-image
+{
+	width: 200px;
+	height: 200px;
+}

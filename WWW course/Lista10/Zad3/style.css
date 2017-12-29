@@ -1,3 +1,8 @@
+body
+{
+	margin-top:20vh;
+}
+
 #logo_img
 {
 	max-height: 40px;
@@ -27,14 +32,24 @@
 	height:340px;
 }
 
+.navbar-small
+{
+	min-height: 10vh;
+}
+
+.navbar-large
+{
+	height: 20vh;
+}
+
 .logo-text
 {
-	font-size: 28px;
+	font-size: 40px;
 }
 
 .logo-img
 {
-	height: 40px;
-	width:40px;
+	height: 60px;
+	width:60px;
 	margin:10px;
 }

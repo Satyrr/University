@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Example</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="style.css">
+
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</head>
+<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="50">
+
+	<nav id="navbar-scrollspy" class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary navbar-large">
+		<img class="logo-img" src="logo.jpg" alt="logo" /> <a class="navbar-brand logo-text" href="#">Strona Główna</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">RTV</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">AGD</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Dom i ogród</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#recommended">Polecane</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#lasta">Ostatnio przeglądane</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#lorem">Lorem Ipsum</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<h1 class="display-4">Hello, world!</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</p>
+	</div>
+
+	<div  class="container-fluid">
+		<div class="row">
+			<div class="list-group news col-12 col-md-4" style="padding:20px">
+				<h3 style="">Aktualności</h3>
+				<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">Świąteczna wyprzedaż</h5>
+						<small>1 day ago</small>
+					</div>
+					<p class="mb-1">Sprawdź świąteczną ofertę</p>
+					<small>Zespół sklepu X</small>
+				</a>
+				<a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">Życzenia</h5>
+						<small class="text-muted">3 days ago</small>
+					</div>
+					<p class="mb-1">Życzymy Wam samych ciepłych chwil spędzonych w rodzinnym gronie i wielu technologicznych inspiracji pod choinką. Niech się spełnią wszystkie Wasze marzenia. Zarówno zawodowe jak i osobiste. Te bardzo ambitne i te zupełnie małe. Aby każdy z Was mógł cieszyć się wymarzonym sprzętem, nie tylko od święta.</p>
+					<small class="text-muted">Zespół sklepu X</small>
+				</a>
+				<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">Rabat na laptopy</h5>
+						<small class="text-muted">3 days ago</small>
+					</div>
+					<p class="mb-1">Wszystkie laptopy 5% taniej.</p>
+					<small class="text-muted">Zespół sklepu X</small>
+				</a>
+			</div>
+
+
+
+			<div id="recommended" class="col-12 col-md-8" style="padding:20px">
+				<h3>Polecamy</h3>
+				<div class="row">
+					<div class=" col-12 col-md-4">
+						<div class="card card_wrapper">
+							<img class="card-img-top card_img" src="tv.jpg" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Samsung TV</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Buy</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="card card_wrapper">
+							<img class="card-img-top card_img" src="phone.jpg" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Sony Phone</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Buy</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="card card_wrapper">
+							<img class="card-img-top card_img" src="printer.jpg" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Brother printer</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Buy</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+		<div id="lasta" style="padding:20px">
+			<h3>Ostatnio przeglądane</h3>
+			<div class="row align-items-center justify-content-center">
+				<div class="card col-12 col-md-2 card_mini">
+					<img class="card-img-top card_img" src="pc.png" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Samsung PC</h5>
+					</div>
+				</div>
+				<div class="card col-12 col-md-2 card_mini">
+					<img class="card-img-top card_img" src="phone.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Sony Phone</h5>
+					</div>
+				</div>
+				<div class="card col-12 col-md-2 card_mini">
+					<img class="card-img-top card_img" src="headphones.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">AKG Headphones</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="lorem" style="margin: 0px 20px">
+			<h3>Lorem Ipsum</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere diam ultrices maximus lobortis. Donec sodales turpis sit amet ipsum suscipit, sed tempor sapien congue. Pellentesque sed interdum libero, quis commodo ante. Vivamus nec aliquet ante, sed rutrum mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras aliquam quis lorem ac semper. Donec eu quam eget nisi cursus facilisis. Aliquam imperdiet nisi quis dolor fringilla lacinia. Integer a rutrum risus. Etiam et purus tincidunt risus blandit consequat. Nullam lobortis, nunc in sollicitudin sagittis, nisi orci lobortis nisl, sit amet eleifend sapien ex in purus.</p>
+
+			<p>Vivamus pulvinar massa consectetur, maximus mi vitae, ultricies mauris. Aliquam tortor nunc, tempus interdum tincidunt ac, tristique eu urna. Nulla sed luctus odio, id efficitur justo. Fusce auctor gravida metus, ut porta libero sagittis ac. Sed sit amet nisl augue. Sed nisl enim, lacinia non nisl sed, condimentum ultrices arcu. Ut lectus ex, ullamcorper et metus ut, vestibulum sodales risus. Morbi sed turpis at tellus imperdiet tempus ut sit amet enim. Maecenas placerat suscipit elementum. Maecenas metus quam, tempus sit amet lorem ac, ultricies fringilla enim. Vivamus volutpat nibh ut massa imperdiet venenatis. Ut faucibus urna turpis, at porta arcu vehicula eget. Sed et hendrerit est.</p>
+
+			<p>Nunc consectetur rhoncus enim, ac suscipit lorem pretium luctus. Duis accumsan, mauris vel lacinia bibendum, lorem sapien tristique quam, a egestas justo sapien gravida nibh. Praesent quis mauris id massa pharetra viverra. Donec vehicula, velit sed fringilla viverra, ipsum erat pulvinar diam, id egestas ipsum nunc sed velit. Proin auctor vehicula luctus. Maecenas felis tortor, vestibulum in ornare id, tincidunt at quam. Vestibulum volutpat risus in fermentum euismod. Nullam ut convallis nisl.</p>
+
+			<p>Duis fermentum risus ut magna consectetur, at laoreet enim feugiat. Praesent quis libero tristique, egestas velit vel, dictum libero. Mauris rhoncus ipsum vel elit egestas, in interdum ex consectetur. Aliquam fringilla hendrerit tortor, ac interdum sapien pellentesque elementum. Duis pulvinar dictum maximus. Nullam quis dapibus velit. Ut malesuada non nisl sit amet congue. Proin venenatis lacinia ante, quis euismod sem cursus vitae. Proin mattis mi eget ligula suscipit, sit amet pretium orci molestie. Aliquam consectetur nulla a blandit consequat.</p>
+
+			<p>Maecenas eget lobortis magna. Integer rutrum sit amet elit quis molestie. Aliquam scelerisque leo quam. Morbi a elit nec risus placerat tincidunt vitae ut lorem. Suspendisse quis pellentesque mauris, quis viverra quam. Morbi vitae turpis quam. Sed interdum ac sem vel dictum. Mauris vitae lorem fringilla, accumsan purus vel, eleifend eros. Nulla facilisi. In maximus feugiat sem ut vehicula. Quisque sem nulla, pretium eget dignissim non, semper sit amet arcu. Pellentesque leo sapien, tempor ac quam eu, dignissim fringilla tellus.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere diam ultrices maximus lobortis. Donec sodales turpis sit amet ipsum suscipit, sed tempor sapien congue. Pellentesque sed interdum libero, quis commodo ante. Vivamus nec aliquet ante, sed rutrum mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras aliquam quis lorem ac semper. Donec eu quam eget nisi cursus facilisis. Aliquam imperdiet nisi quis dolor fringilla lacinia. Integer a rutrum risus. Etiam et purus tincidunt risus blandit consequat. Nullam lobortis, nunc in sollicitudin sagittis, nisi orci lobortis nisl, sit amet eleifend sapien ex in purus.</p>
+
+			<p>Vivamus pulvinar massa consectetur, maximus mi vitae, ultricies mauris. Aliquam tortor nunc, tempus interdum tincidunt ac, tristique eu urna. Nulla sed luctus odio, id efficitur justo. Fusce auctor gravida metus, ut porta libero sagittis ac. Sed sit amet nisl augue. Sed nisl enim, lacinia non nisl sed, condimentum ultrices arcu. Ut lectus ex, ullamcorper et metus ut, vestibulum sodales risus. Morbi sed turpis at tellus imperdiet tempus ut sit amet enim. Maecenas placerat suscipit elementum. Maecenas metus quam, tempus sit amet lorem ac, ultricies fringilla enim. Vivamus volutpat nibh ut massa imperdiet venenatis. Ut faucibus urna turpis, at porta arcu vehicula eget. Sed et hendrerit est.</p>
+
+			<p>Nunc consectetur rhoncus enim, ac suscipit lorem pretium luctus. Duis accumsan, mauris vel lacinia bibendum, lorem sapien tristique quam, a egestas justo sapien gravida nibh. Praesent quis mauris id massa pharetra viverra. Donec vehicula, velit sed fringilla viverra, ipsum erat pulvinar diam, id egestas ipsum nunc sed velit. Proin auctor vehicula luctus. Maecenas felis tortor, vestibulum in ornare id, tincidunt at quam. Vestibulum volutpat risus in fermentum euismod. Nullam ut convallis nisl.</p>
+
+			<p>Duis fermentum risus ut magna consectetur, at laoreet enim feugiat. Praesent quis libero tristique, egestas velit vel, dictum libero. Mauris rhoncus ipsum vel elit egestas, in interdum ex consectetur. Aliquam fringilla hendrerit tortor, ac interdum sapien pellentesque elementum. Duis pulvinar dictum maximus. Nullam quis dapibus velit. Ut malesuada non nisl sit amet congue. Proin venenatis lacinia ante, quis euismod sem cursus vitae. Proin mattis mi eget ligula suscipit, sit amet pretium orci molestie. Aliquam consectetur nulla a blandit consequat.</p>
+
+			<p>Maecenas eget lobortis magna. Integer rutrum sit amet elit quis molestie. Aliquam scelerisque leo quam. Morbi a elit nec risus placerat tincidunt vitae ut lorem. Suspendisse quis pellentesque mauris, quis viverra quam. Morbi vitae turpis quam. Sed interdum ac sem vel dictum. Mauris vitae lorem fringilla, accumsan purus vel, eleifend eros. Nulla facilisi. In maximus feugiat sem ut vehicula. Quisque sem nulla, pretium eget dignissim non, semper 
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere diam ultrices maximus lobortis. Donec sodales turpis sit amet ipsum suscipit, sed tempor sapien congue. Pellentesque sed interdum libero, quis commodo ante. Vivamus nec aliquet ante, sed rutrum mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras aliquam quis lorem ac semper. Donec eu quam eget nisi cursus facilisis. Aliquam imperdiet nisi quis dolor fringilla lacinia. Integer a rutrum risus. Etiam et purus tincidunt risus blandit consequat. Nullam lobortis, nunc in sollicitudin sagittis, nisi orci lobortis nisl, sit amet eleifend sapien ex in purus.</p>
+
+			<p>Vivamus pulvinar massa consectetur, maximus mi vitae, ultricies mauris. Aliquam tortor nunc, tempus interdum tincidunt ac, tristique eu urna. Nulla sed luctus odio, id efficitur justo. Fusce auctor gravida metus, ut porta libero sagittis ac. Sed sit amet nisl augue. Sed nisl enim, lacinia non nisl sed, condimentum ultrices arcu. Ut lectus ex, ullamcorper et metus ut, vestibulum sodales risus. Morbi sed turpis at tellus imperdiet tempus ut sit amet enim. Maecenas placerat suscipit elementum. Maecenas metus quam, tempus sit amet lorem ac, ultricies fringilla enim. Vivamus volutpat nibh ut massa imperdiet venenatis. Ut faucibus urna turpis, at porta arcu vehicula eget. Sed et hendrerit est.</p>
+
+			<p>Nunc consectetur rhoncus enim, ac suscipit lorem pretium luctus. Duis accumsan, mauris vel lacinia bibendum, lorem sapien tristique quam, a egestas justo sapien gravida nibh. Praesent quis mauris id massa pharetra viverra. Donec vehicula, velit sed fringilla viverra, ipsum erat pulvinar diam, id egestas ipsum nunc sed velit. Proin auctor vehicula luctus. Maecenas felis tortor, vestibulum in ornare id, tincidunt at quam. Vestibulum volutpat risus in fermentum euismod. Nullam ut convallis nisl.</p>
+
+			<p>Duis fermentum risus ut magna consectetur, at laoreet enim feugiat. Praesent quis libero tristique, egestas velit vel, dictum libero. Mauris rhoncus ipsum vel elit egestas, in interdum ex consectetur. Aliquam fringilla hendrerit tortor, ac interdum sapien pellentesque elementum. Duis pulvinar dictum maximus. Nullam quis dapibus velit. Ut malesuada non nisl sit amet congue. Proin venenatis lacinia ante, quis euismod sem cursus vitae. Proin mattis mi eget ligula suscipit, sit amet pretium orci molestie. Aliquam consectetur nulla a blandit consequat.</p>
+
+			<p>Maecenas eget lobortis magna. Integer rutrum sit amet elit quis molestie. Aliquam scelerisque leo quam. Morbi a elit nec risus placerat tincidunt vitae ut lorem. Suspendisse quis pellentesque mauris, quis viverra quam. Morbi vitae turpis quam. Sed interdum ac sem vel dictum. Mauris vitae lorem fringilla, accumsan purus vel, eleifend eros. Nulla facilisi. In maximus feugiat sem ut vehicula. Quisque sem nulla, pretium eget dignissim non, semper sit amet arcu. Pellentesque leo sapien, tempor ac quam eu, dignissim fringilla tellus.</p>sit amet arcu. Pellentesque leo sapien, tempor ac quam eu, dignissim fringilla tellus.</p>			
+		</div>
+	</div>
+
+	<hr>
+
+	<footer class="footer">
+		<div class="container-fluid text-center">
+			<span class="text-muted ">© Sklep 2002 - 2017</span>
+		</div>
+	</footer>
+
+</body>
+</html>
+
