@@ -11,7 +11,6 @@ import torch
 from torch.autograd import Variable
 
 import data
-import io
 
 parser = argparse.ArgumentParser(description='PyTorch PTB Language Model')
 
@@ -61,7 +60,7 @@ input = Variable(torch.rand(1, 1).mul(ntokens).long(), volatile=True)
 if args.cuda:
     input.data = input.data.cuda()
 
-with io.open(args.outf, 'w') as outf:
+with open(args.outf, 'w') as outf:
     for i in range(args.words):
         output, hidden = model(input, hidden, return_prob=True)
         word_weights = output.squeeze().data.div(args.temperature).exp().cpu()
