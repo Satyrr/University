@@ -54,6 +54,8 @@ class RNNModel(nn.Module):
         self.n_experts = n_experts
         self.ntoken = ntoken
 
+        self.wdrop = wdrop
+
         size = 0
         for p in self.parameters():
             size += p.nelement()
@@ -66,6 +68,7 @@ class RNNModel(nn.Module):
         self.decoder.weight.data.uniform_(-initrange, initrange)
 
     def forward(self, input, hidden, return_h=False, return_prob=False):
+        print(input.size())
         batch_size = input.size(1)
 
         emb = embedded_dropout(self.encoder, input, dropout=self.dropoute if self.training else 0)
@@ -79,6 +82,10 @@ class RNNModel(nn.Module):
         raw_outputs = []
         outputs = []
         for l, rnn in enumerate(self.rnns):
+            if self.wdrop:
+                rnn.module.flatten_parameters()
+            else:
+                rnn.flatten_parameters()
             current_input = raw_output
             raw_output, new_h = rnn(raw_output, hidden[l])
             new_hidden.append(new_h)
