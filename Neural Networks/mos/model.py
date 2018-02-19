@@ -68,7 +68,6 @@ class RNNModel(nn.Module):
         self.decoder.weight.data.uniform_(-initrange, initrange)
 
     def forward(self, input, hidden, return_h=False, return_prob=False):
-        print(input.size())
         batch_size = input.size(1)
 
         emb = embedded_dropout(self.encoder, input, dropout=self.dropoute if self.training else 0)
