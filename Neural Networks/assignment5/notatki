@@ -1,1 +1,0 @@
-conv layer: dużo filtrów, każdy filtr ma małą szerokość i wysokość, głębokość równa głębokośći inputu. Każdy filtr nałożony na input tworzy aktywację 2D. Aktywacje stackujemy otrzymując output
