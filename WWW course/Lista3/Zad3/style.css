@@ -1,0 +1,42 @@
+.container
+{
+	width: 100%;
+	height: 3000px;
+	background-color: grey;
+}
+
+.example
+{
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+}
+.divstatic
+{
+	background-color: greenyellow;
+	position: static;
+}
+
+.divabsolute
+{
+	background-color: purple;
+	position: absolute;
+	top: 250px;
+	left: 250px;
+}
+
+.divrelative
+{
+	background-color: goldenrod;
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+
+.divfixed
+{
+	background-color:green;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}

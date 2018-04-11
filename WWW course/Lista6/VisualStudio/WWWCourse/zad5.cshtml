@@ -1,0 +1,15 @@
+﻿@{
+    //Cache-Control: public, private, no-cache, no-store
+    Response.Cache.SetExpires(DateTime.Now.AddSeconds(60));
+    Response.Cache.SetCacheability(HttpCacheability.Public);
+    Response.Cache.SetValidUntilExpires(true);
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h2>Aktualny czsas: @DateTime.Now</h2>
+    </body>
+</html>

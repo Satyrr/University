@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="’MojeDane’" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ListaStudentow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Student">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imie" type="xs:string" />
+              <xs:element name="Nazwisko" type="xs:string" />
+              <xs:element name="DataUr" type="xs:date" />
+              <xs:element name="Adresy">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AdresStaly" type="xs:string" />
+                    <xs:element name="AdresTymczasowy" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Zajecia">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Przedmiot">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Nazwa" type="xs:string" />
+                          <xs:element name="Oceny">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="Ocena" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

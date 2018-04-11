@@ -1,0 +1,36 @@
+﻿@page
+@{
+
+}
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#movie").on('input', function () {
+                if ($(this).val().length == 0) {
+                    $("#movie_list").empty()
+                    return;
+                }
+
+                $.ajax("/Zad2Movies",
+                    {
+                        complete: updateMovieList,
+                        data: { substring: $(this).val()}
+                    });
+            });
+
+            function updateMovieList(jqXHR, status)
+            {
+                if (status != "success") return;
+                $("#movie_list").html(jqXHR.responseText)
+            }
+        });
+    </script>
+}
+
+<input type="text" id="movie" >
+
+<div>
+    <ul id="movie_list">
+
+    </ul>
+</div>

@@ -1,0 +1,10 @@
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\bin\Debug\Zad4.exe.config
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\bin\Debug\Zad4.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\bin\Debug\Zad4.pdb
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\obj\Debug\Zad4.csprojResolveAssemblyReference.cache
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\obj\Debug\Zad4.CustomProgressBar.resources
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\obj\Debug\Zad4.Properties.Resources.resources
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\obj\Debug\Zad4.csproj.GenerateResource.Cache
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\obj\Debug\Zad4.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\obj\Debug\Zad4.pdb
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad4\Zad4\obj\Debug\Zad4.Form1.resources

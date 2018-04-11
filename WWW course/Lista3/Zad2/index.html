@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style>
+		.box
+		{
+			width:300px;
+			height: 300px;
+			background-color: grey;
+			margin-bottom: 10px;
+			position: relative;
+			text-align: center;
+
+			display:flex;
+			justify-content:center;
+			align-items:center
+		}
+		.centerdiv
+		{
+			width:200px;
+			height:200px;
+			background-color: green;
+
+			/*
+			position: absolute;
+			top:50%;
+			left:50%;
+			margin: -100px;
+			*/
+		}
+
+		.centerspan
+		{
+			background-color: green;
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>Tytuł Strony</title>
+</head>
+
+
+<body>
+	<div class="box">
+		<div class="centerdiv">Wycentrowany div</div>
+	</div>
+
+	<div class="box">
+		<span class="centerspan">Wycentrowany span</span>
+	</div>
+	
+</body>
+
+</html>

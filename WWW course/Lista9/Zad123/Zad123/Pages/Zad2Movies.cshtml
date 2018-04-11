@@ -1,0 +1,13 @@
+﻿@page
+@{
+
+    Layout = null;
+    var movies = (new Movies()).GetMoviesFromSubstring(Request.Query["substring"]);
+    movies = movies.Take(10).ToList();
+
+}
+
+@foreach(var movie in movies)
+{
+    <li>@movie</li>
+}

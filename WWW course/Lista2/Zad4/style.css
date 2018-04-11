@@ -1,0 +1,36 @@
+div#content{
+    width:400px;
+    margin:0px;
+    box-sizing: border-box;
+    background-color: red;
+}
+div#content::before
+{
+  content:"aaa";
+}
+
+a.readMore {
+     display: inline-block;
+  padding: 0 7px;
+  height: 31px;
+  text-align: center;
+  background: url(drewniany_sprite.jpg) 0 -31px repeat-x;
+}
+a.readMore:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 31px;
+  margin: 0 -12px 0 0;
+  float: right;
+  background: url(drewniany_sprite.jpg) -68px 0 no-repeat;
+}
+a.readMore:before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 31px;
+  margin: 0 0 0 -12px;
+  float: left;
+  background: url(drewniany_sprite.jpg) 0 0 no-repeat;
+}

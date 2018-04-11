@@ -1,0 +1,49 @@
+﻿@{ 
+    var cook1 = new HttpCookie("ciastkoSerwerowe1", "123");
+    var cook2 = new HttpCookie("ciastkoSerwerowe2", "456");
+    var cook3 = new HttpCookie("ciastkoHTTPOnly", "789");
+    cook3.HttpOnly = true;
+
+    Response.SetCookie(cook1);
+    Response.SetCookie(cook2);
+    Response.SetCookie(cook3);
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zad7</title>
+
+        <script>
+            window.onload = function()
+            {
+                var cookiesList = document.getElementById("ciastka")
+
+                var cookiesArray = document.cookie.split("; ")
+                for(cookie of cookiesArray)
+                {
+                    if (!cookie) break;
+                    var cookieElement = document.createElement("li")
+                    cookieElement.innerHTML = cookie
+                    cookiesList.appendChild(cookieElement)
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <h2>Ciastka odczytane na serwerze:</h2>
+        <ul>
+            @foreach (var key in Request.Cookies.AllKeys)
+            {
+                <li>@key = @Request.Cookies[key].Value</li>
+            }
+        </ul>
+
+        <h2>Ciastka odczytane w javascript:</h2>
+        <ul id="ciastka">
+
+
+        </ul>
+    </body>
+</html>

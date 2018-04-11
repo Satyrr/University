@@ -1,0 +1,116 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Zad123
+{
+
+
+    public class Movies
+    {
+        private List<string> movies = new List<string>()
+        {
+            "Błękitny anioł",
+            "Światła wielkiego miasta",
+            "Kacza zupa (film 1933)|Kacza zupa",
+            "Panowie w cylindrach",
+            "Towarzysze broni",
+            "Ludzie za mgłą",
+            "Przeminęło z wiatrem (film)|Przeminęło z wiatrem",
+            "Reguły gry",
+            "Grona gniewu (film)|Grona gniewu",
+            "Obywatel Kane",
+            "Iwan Groźny (film)|Iwan Groźny",
+            "Komedianci (film 1945)|Komedianci",
+            "Paisà",
+            "Złodzieje rowerów",
+            "Trzeci człowiek",
+            "Asfaltowa dżungla",
+            "Rashōmon (film)|Rashōmon",
+            "Bulwar Zachodzącego Słońca",
+            "Deszczowa piosenka",
+            "Zakazane zabawy",
+            "Cena strachu (film 1953)|Cena strachu",
+            "Wieczór kuglarzy",
+            "Okno na podwórze (film 1954)|Okno na podwórze",
+            "La strada",
+            "Siedmiu samurajów",
+            "Buntownik bez powodu",
+            "Uśmiech nocy",
+            "Siódma pieczęć (film)|Siódma pieczęć",
+            "Ucieczka skazańca",
+            "Tam, gdzie rosną poziomki",
+            "Dwunastu gniewnych ludzi",
+            "Pół żartem, pół serio",
+            "Przygoda (film 1960)|Przygoda",
+            "Zeszłego roku w Marienbadzie",
+            "Viridiana",
+            "Samotność długodystansowca",
+            "Milczenie (szwedzki film 1963)|Milczenie",
+            "8½|Osiem i pół",
+            "Lampart (film)|Lampart",
+            "Przygody Toma Jonesa",
+            "Grek Zorba (film)|Grek Zorba",
+            "Powiększenie (film)|Powiększenie",
+            "Pociągi pod specjalnym nadzorem",
+            "Piękność dnia",
+            "Spotkałem nawet szczęśliwych Cyganów",
+            "Bonnie i Clyde (film)|Bonnie i Clyde",
+            "Absolwent (film)|Absolwent",
+            "2001: Odyseja kosmiczna (film)|2001: Odyseja kosmiczna",
+            "Dziecko Rosemary (film)|Dziecko Rosemary",
+            "Andriej Rublow (film)|Andriej Rublow",
+            "Nocny kowboj (film)|Nocny kowboj",
+            "MASH (film)|MASH",
+            "Był sobie drozd",
+            "Konformista (film)|Konformista",
+            "Posłaniec (film 1971)|Posłaniec",
+            "Amarcord",
+            "Śmierć w Wenecji (film)|Śmierć w Wenecji",
+            "Francuski łącznik",
+            "Kabaret (film)|Kabaret",
+            "Szepty i krzyki",
+            "Ojciec chrzestny (film)|Ojciec chrzestny",
+            "Chinatown (film)|Chinatown",
+            "Rozmowa (film)|Rozmowa",
+            "Strach na wróble (film 1973)|Strach na wróble",
+            "Szczęśliwy człowiek (film 1973)|Szczęśliwy człowiek",
+            "Kalina czerwona",
+            "Dyskretny urok burżuazji",
+            "Portret rodzinny we wnętrzu",
+            "Piknik pod Wiszącą Skałą (film)|Piknik pod Wiszącą Skałą",
+            "Nakarmić kruki",
+            "Wniebowstąpienie (film 1976)|Wniebowstąpienie",
+            "Annie Hall",
+            "Trzy kobiety (film 1977)|Trzy kobiety",
+            "Mroczny przedmiot pożądania",
+            "Gospodarz stadniny",
+            "Łowca jeleni",
+            "Czas apokalipsy",
+            "Manhattan (film)|Manhattan",
+            "Blaszany bębenek (film)|Blaszany bębenek",
+            "Wściekły Byk",
+            "Mefisto (film)|Mefisto",
+            "Rydwany ognia",
+            "Łowca androidów",
+            "Fanny i Aleksander",
+            "Ran (film 1985)|Ran",
+            "Piwo (film 1985)|Piwo",
+            "Misja (film 1986)|Misja",
+            "Ofiarowanie (film)|Ofiarowanie",
+            "Droga węża",
+            "Imię róży (film)|Imię róży",
+            "Nietykalni (film 1987)|Nietykalni",
+            "Uczta Babette",
+            "Pejzaż we mgle",
+            "Dzikość serca",
+            "Barton Fink"
+        };
+
+        public List<string> GetMoviesFromSubstring(string substring)
+        {
+            return movies.Where(s => s.Contains(substring)).ToList();
+        }
+    }
+}

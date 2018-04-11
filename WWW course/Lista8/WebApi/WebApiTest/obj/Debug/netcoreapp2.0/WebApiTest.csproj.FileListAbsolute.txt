@@ -1,0 +1,33 @@
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.deps.json
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.runtimeconfig.json
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.runtimeconfig.dev.json
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.dll
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.csprojResolveAssemblyReference.cache
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.csproj.CoreCompileInputs.cache
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.AssemblyInfoInputs.cache
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.AssemblyInfo.cs
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.pdb
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.dll
+C:\Users\Satyr\Source\Repos\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.pdb
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.deps.json
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.runtimeconfig.json
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.runtimeconfig.dev.json
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.dll
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.pdb
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.csprojResolveAssemblyReference.cache
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.csproj.CoreCompileInputs.cache
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.AssemblyInfoInputs.cache
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.AssemblyInfo.cs
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.dll
+C:\Users\maku\Documents\Visual Studio 2017\Projects\WebApiTest\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.pdb
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.deps.json
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.runtimeconfig.json
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.runtimeconfig.dev.json
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.dll
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\bin\Debug\netcoreapp2.0\WebApiTest.pdb
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.csprojResolveAssemblyReference.cache
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.csproj.CoreCompileInputs.cache
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.AssemblyInfoInputs.cache
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.AssemblyInfo.cs
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.dll
+C:\uczelnia\www\Lista8\WebApiTest2\WebApiTest\obj\Debug\netcoreapp2.0\WebApiTest.pdb

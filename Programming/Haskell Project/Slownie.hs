@@ -87,31 +87,4 @@ okreslMnoznik k
 
 przedrostki1 :: [(Integer,String)]
 przedrostki1 = zip [0..9] ["" ,"mi", "bi", "try", "kwadry", "kwinty", "seksty", "septy", "okty", "noni"]
-przedrostki2 :: [(Integer,String)]
-przedrostki2 = zip [0..9] ["", "un", "do", "tri", "kwatuor", "kwin", "seks", "septen", "okto", "nowem"]
-przedrostki3 :: [(Integer,String)]
-przedrostki3 = zip [0..9] ["", "decy", "wicy", "trycy", "kwadragi", "kwintagi", "seksginty", "septagi", "oktagi", "nonagi"]
-przedrostki4 :: [(Integer,String)]
-przedrostki4 = zip [0..9] ["", "centy", "ducenty", "trycenty", "kwadryge", "kwinge", "sescenty", "septynge", "oktynge", "nonge"]
-
-przedrostek :: Integer -> String
-przedrostek k 
-	| k<10 = reprezentacjaSlowna k przedrostki1 
-	| otherwise = (reprezentacjaSlowna a przedrostki2) ++ (reprezentacjaSlowna b przedrostki3) ++ (reprezentacjaSlowna c przedrostki4)      
-	where a = k `mod` 10
-	      b = (k `mod` 100) `div` 10
-	      c = k `div` 100                      
-
---------- Waluta ---------
-
-walutaSlownie :: Waluta -> Integer -> String -- wyznaczenie słownej reprezentacji waluty dla podanej kwoty
-walutaSlownie waluta liczba 
-    | kwota == 1 = mianownik_poj waluta
-    | (kwota `mod` 100) `elem` [12,13,14] = dopelniacz_mn waluta
-    | (kwota `mod` 10) `elem` [2,3,4] = mianownik_mn waluta
-    | otherwise = dopelniacz_mn waluta
-    where kwota = bezwzgledna liczba
-
--------- Inne --------
-bezwzgledna :: Integer -> Integer
-bezwzgledna x = if x<0 then -x else x
+przedr

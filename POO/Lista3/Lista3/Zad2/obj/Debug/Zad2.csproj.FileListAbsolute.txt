@@ -1,0 +1,7 @@
+C:\uczelnia\POO\Lista3\Lista3\Lista3\bin\Debug\Lista3.exe.config
+C:\uczelnia\POO\Lista3\Lista3\Lista3\bin\Debug\Lista3.exe
+C:\uczelnia\POO\Lista3\Lista3\Lista3\bin\Debug\Lista3.pdb
+C:\uczelnia\POO\Lista3\Lista3\Lista3\obj\Debug\Zad2.csprojResolveAssemblyReference.cache
+C:\uczelnia\POO\Lista3\Lista3\Lista3\obj\Debug\Zad2.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista3\Lista3\Lista3\obj\Debug\Lista3.exe
+C:\uczelnia\POO\Lista3\Lista3\Lista3\obj\Debug\Lista3.pdb

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Zad3</name>
+    </assembly>
+    <members>
+        <member name="T:Example.CExample">
+            <summary>
+            Klasa zawierajaca glowne metody prorgramu
+            </summary>
+        </member>
+        <member name="M:Example.CExample.PrivateAccess">
+            <summary>
+            Metoda demonstrujaca dostep do prywatnych skladowych
+            zewnetrznych klas
+            </summary>
+        </member>
+        <member name="M:Example.CExample.EfficiencyCompare">
+            <summary>
+            Metoda porownujaca wydajnosc dostepu do skladowych klasy
+            za pomoca refleksji oraz w standardowy sposob
+            </summary>
+        </member>
+        <member name="M:Example.CExample.Main(System.String[])">
+            <summary>
+            Glowna funkcja programu
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="T:Example.TestClass">
+            <summary>
+            Klasa zawierajaca funkcje do testowania wydajnosci 
+            </summary>
+        </member>
+        <member name="F:Example.TestClass.testval">
+            <summary>
+            Zmienna uzywana do testowania wydajnosci
+            </summary>
+        </member>
+        <member name="M:Example.TestClass.Calculate">
+            <summary>
+            Funkcja wykonujaca proste obliczenia
+            </summary>
+        </member>
+        <member name="T:Example.Person">
+            <summary>
+            Klasa reprezentujaca osobe
+            </summary>
+        </member>
+        <member name="M:Example.Person.#ctor(System.String,System.Int32)">
+            <summary>
+            Konstruktor osoby.
+            </summary>
+            <param name="n">Nazwa osoby</param>
+            <param name="a">Wiek osoby</param>
+        </member>
+    </members>
+</doc>

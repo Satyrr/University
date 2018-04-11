@@ -1,0 +1,38 @@
+﻿@page
+@using System.Text.RegularExpressions; 
+@{
+
+    Layout = null;
+    List<string> errors = new List<string>();
+
+    if (Request.Query["login"].ToString().Length > 0 && !Regex.IsMatch(Request.Query["login"].ToString(), @"^[A-Za-z0-9]{3,10}$"))
+    {
+        errors.Add("Login musi składać się z 3-10 liter lub cyfr");
+    }
+
+    if (Request.Query["password"].ToString().Length > 0 && !Regex.IsMatch(Request.Query["password"].ToString(), @"^[A-Za-z0-9]{3,10}$"))
+    {
+        errors.Add("Hasło musi składać się z 3-10 liter lub cyfr");
+    }
+
+    if (Request.Query["password_repeat"].ToString().Length > 0 && Request.Query["password"].ToString() != Request.Query["password_repeat"].ToString())
+    {
+        errors.Add("Hasła nie zgadzają się");
+    }
+
+    DateTime date;
+    if(!DateTime.TryParse(Request.Query["birthday"].ToString(), out date) )
+    {
+        errors.Add("Niepoprawny format daty");
+    }
+}
+
+@if(errors.Count > 0)
+{
+    <ul>
+        @foreach(string err in errors)
+        {
+            <li>@err</li>
+        }
+    </ul>
+}

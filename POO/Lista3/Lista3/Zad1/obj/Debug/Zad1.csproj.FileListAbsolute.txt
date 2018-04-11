@@ -1,0 +1,13 @@
+C:\uczelnia\POO\Lista3\Lista3\Zad1\bin\Debug\Zad1.exe.config
+C:\uczelnia\POO\Lista3\Lista3\Zad1\bin\Debug\Zad1.exe
+C:\uczelnia\POO\Lista3\Lista3\Zad1\bin\Debug\Zad1.pdb
+C:\uczelnia\POO\Lista3\Lista3\Zad1\obj\Debug\Zad1.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista3\Lista3\Zad1\obj\Debug\Zad1.exe
+C:\uczelnia\POO\Lista3\Lista3\Zad1\obj\Debug\Zad1.pdb
+C:\uczelnia\University\POO\Lista3\Lista3\Zad1\bin\Debug\Zad1.exe.config
+C:\uczelnia\University\POO\Lista3\Lista3\Zad1\bin\Debug\Zad1.exe
+C:\uczelnia\University\POO\Lista3\Lista3\Zad1\bin\Debug\Zad1.pdb
+C:\uczelnia\University\POO\Lista3\Lista3\Zad1\obj\Debug\Zad1.csprojResolveAssemblyReference.cache
+C:\uczelnia\University\POO\Lista3\Lista3\Zad1\obj\Debug\Zad1.csproj.CoreCompileInputs.cache
+C:\uczelnia\University\POO\Lista3\Lista3\Zad1\obj\Debug\Zad1.exe
+C:\uczelnia\University\POO\Lista3\Lista3\Zad1\obj\Debug\Zad1.pdb

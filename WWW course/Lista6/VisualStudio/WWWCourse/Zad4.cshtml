@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form method="post" action="#">
+            <label for="imie">Imię: </label>
+            <input type="text" name="imie">
+            <br/>
+
+            <label for="nazwisko">Nazwisko:</label>
+            <input type="text" name="nazwisko">
+            <br />
+
+            <label for="mail">Email:</label>
+            <input type="email" name="mail">
+            <br />
+
+            <label for="plec">Płeć:</label>
+            <input type="radio" name="plec" value="male" checked> Mężczyzna
+            <input type="radio" name="plec" value="female"> Kobieta
+            <br />
+
+            <input type="submit">
+
+
+            @if (IsPost)
+            {
+                <h2>Dane wysłanego formularza:</h2>
+                <ol>
+                    <li>@("Imię: " + Request.Form["imie"])</li>
+                    <li>@("Nazwisko: " + Request.Form["nazwisko"])</li>
+                    <li>@("Email: " + Request.Form["mail"])</li>
+                    <li>@("Płeć: " + Request.Form["plec"])</li>
+                </ol>
+            }
+        </form>
+    </body>
+</html>

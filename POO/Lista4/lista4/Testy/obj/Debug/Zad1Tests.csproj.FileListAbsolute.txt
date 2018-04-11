@@ -1,0 +1,11 @@
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\bin\Debug\Zad1Tests.dll
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\bin\Debug\Zad1Tests.pdb
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\bin\Debug\lista4.exe
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\bin\Debug\nunit.framework.dll
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\bin\Debug\lista4.pdb
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\bin\Debug\lista4.exe.config
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\bin\Debug\nunit.framework.xml
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\obj\Debug\Zad1Tests.csprojResolveAssemblyReference.cache
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\obj\Debug\Zad1Tests.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\obj\Debug\Zad1Tests.dll
+C:\uczelnia\POO\Lista4\lista4\Zad1Tests\obj\Debug\Zad1Tests.pdb

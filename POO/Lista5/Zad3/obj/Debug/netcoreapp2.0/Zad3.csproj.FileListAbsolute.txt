@@ -1,0 +1,11 @@
+C:\uczelnia\POO\Lista5\Zad3\bin\Debug\netcoreapp2.0\Zad3.deps.json
+C:\uczelnia\POO\Lista5\Zad3\bin\Debug\netcoreapp2.0\Zad3.runtimeconfig.json
+C:\uczelnia\POO\Lista5\Zad3\bin\Debug\netcoreapp2.0\Zad3.runtimeconfig.dev.json
+C:\uczelnia\POO\Lista5\Zad3\bin\Debug\netcoreapp2.0\Zad3.dll
+C:\uczelnia\POO\Lista5\Zad3\bin\Debug\netcoreapp2.0\Zad3.pdb
+C:\uczelnia\POO\Lista5\Zad3\obj\Debug\netcoreapp2.0\Zad3.csprojResolveAssemblyReference.cache
+C:\uczelnia\POO\Lista5\Zad3\obj\Debug\netcoreapp2.0\Zad3.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista5\Zad3\obj\Debug\netcoreapp2.0\Zad3.AssemblyInfoInputs.cache
+C:\uczelnia\POO\Lista5\Zad3\obj\Debug\netcoreapp2.0\Zad3.AssemblyInfo.cs
+C:\uczelnia\POO\Lista5\Zad3\obj\Debug\netcoreapp2.0\Zad3.dll
+C:\uczelnia\POO\Lista5\Zad3\obj\Debug\netcoreapp2.0\Zad3.pdb

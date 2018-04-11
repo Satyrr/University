@@ -1,0 +1,172 @@
+		body
+		{
+			display:flex;
+			flex-wrap:wrap;
+		}
+
+		/* Container na zwierzaki i zdjecia */
+		.animal 
+		{
+			position: relative;
+			flex: 0 0 auto;
+			width: 300px;
+			margin: 2px;
+		}
+		.animal img
+		{
+			width:300px;
+			height:300px;
+			transition: filter 200ms linear;
+		}
+		.animal:hover img
+		{
+			filter: blur(10px);
+		}
+
+
+		/* Opis zwierzakow */
+		.animal div.opis
+		{
+			visibility: hidden;
+			opacity:0;
+			transition: opacity 2000ms;
+
+			font-size:1.5em;
+			text-shadow: 0px 0px 25px white;
+
+			padding: 20px;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+
+		.animal:hover div.opis
+		{
+			visibility: visible;
+			opacity:1.0;
+		}
+
+		/* 2 */
+		.animal:nth-child(2) > div.opis
+		{
+			transform: rotate(180deg);
+			transition: transform 600ms, opacity 2000ms;
+		}
+
+		.animal:nth-child(2):hover div.opis
+		{
+			transform: rotate(0deg);
+		}
+
+		/* 3 */
+		.animal:nth-child(3) > div.opis
+		{
+			transform: scale(0.5,0.5);
+			transition: transform 600ms, opacity 2000ms;
+		}
+
+		.animal:nth-child(3):hover div.opis
+		{
+			transform: scale(1,1);
+		}
+
+		/* 4 */
+		.animal:nth-child(4) > div.opis
+		{
+			transform: skewX(40deg);
+			transition: transform 900ms ease-in, opacity 2000ms;
+		}
+
+		.animal:nth-child(4):hover div.opis
+		{
+			transform: skewX(0deg);
+		}
+
+		/* 5 */
+		.animal:nth-child(5) > div.opis
+		{
+			transform: rotateY(180deg);
+			transition: transform 1800ms ease-out, opacity 2000ms;
+		}
+
+		.animal:nth-child(5):hover div.opis
+		{
+			transform: rotateY(0deg);
+		}
+
+		/* 6 */
+		.animal:nth-child(6) > div.opis
+		{
+			color: white;
+			transition: color 1800ms ease-out;
+		}
+
+		.animal:nth-child(6):hover div.opis
+		{
+			color: black;
+		}
+
+		/* 7 */
+		@keyframes example {
+			0% 
+			{
+				color: red;
+				transform: rotateX(50deg);
+			}
+			50%
+			{
+				transform: rotateX(-50deg);
+			}
+			100%
+			{
+				transform: rotateX(0);
+				color: yellow;
+			}
+		}
+
+		.animal:nth-child(7):hover div.opis
+		{
+			animation-name: example;
+			animation-duration: 4s;
+		}
+
+		/* 8 */
+		@keyframes swing
+		{
+			15%
+			{
+				-webkit-transform: translateX(5px);
+				transform: translateX(5px);
+			}
+			30%
+			{
+				-webkit-transform: translateX(-5px);
+				transform: translateX(-5px);
+			}
+			50%
+			{
+				-webkit-transform: translateX(3px);
+				transform: translateX(3px);
+			}
+			65%
+			{
+				-webkit-transform: translateX(-3px);
+				transform: translateX(-3px);
+			}
+			80%
+			{
+				-webkit-transform: translateX(2px);
+				transform: translateX(2px);
+			}
+			100%
+			{
+				-webkit-transform: translateX(0);
+				transform: translateX(0);
+			}
+		}
+
+		.animal:nth-child(8):hover div.opis
+		{
+			animation-name: swing;
+			animation-duration: 2s;
+		}

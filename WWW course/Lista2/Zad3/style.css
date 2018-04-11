@@ -1,0 +1,35 @@
+div {
+    color: red;
+}
+p{
+    color:green;
+    font-size: 20px;
+}
+ol p {
+    color:blue;
+}
+div > p {
+    text-decoration: underline;
+}
+div span {
+    color:purple;
+}
+div > span {
+    color:yellow;
+}
+ol + p {
+    color:blue;
+    font-size: 30px;
+}
+
+p#para_id{
+    font-weight: bold;
+}
+
+p.para_class{
+    font-style: italic;
+}
+
+p.para_class + p{
+    text-decoration: overline;
+}

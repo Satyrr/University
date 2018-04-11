@@ -1,0 +1,11 @@
+C:\uczelnia\POO\Lista5\Zad2\bin\Debug\netcoreapp2.0\Zad2.deps.json
+C:\uczelnia\POO\Lista5\Zad2\bin\Debug\netcoreapp2.0\Zad2.runtimeconfig.json
+C:\uczelnia\POO\Lista5\Zad2\bin\Debug\netcoreapp2.0\Zad2.runtimeconfig.dev.json
+C:\uczelnia\POO\Lista5\Zad2\bin\Debug\netcoreapp2.0\Zad2.dll
+C:\uczelnia\POO\Lista5\Zad2\bin\Debug\netcoreapp2.0\Zad2.pdb
+C:\uczelnia\POO\Lista5\Zad2\obj\Debug\netcoreapp2.0\Zad2.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista5\Zad2\obj\Debug\netcoreapp2.0\Zad2.AssemblyInfoInputs.cache
+C:\uczelnia\POO\Lista5\Zad2\obj\Debug\netcoreapp2.0\Zad2.AssemblyInfo.cs
+C:\uczelnia\POO\Lista5\Zad2\obj\Debug\netcoreapp2.0\Zad2.dll
+C:\uczelnia\POO\Lista5\Zad2\obj\Debug\netcoreapp2.0\Zad2.pdb
+C:\uczelnia\POO\Lista5\Zad2\obj\Debug\netcoreapp2.0\Zad2.csprojResolveAssemblyReference.cache

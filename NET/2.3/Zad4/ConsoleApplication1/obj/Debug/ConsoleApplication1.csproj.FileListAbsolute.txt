@@ -1,0 +1,10 @@
+C:\Users\maku\Documents\Visual Studio 2015\Projects\2.3\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\maku\Documents\Visual Studio 2015\Projects\2.3\Zad4\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\maku\Documents\Visual Studio 2015\Projects\2.3\Zad4\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\maku\Documents\Visual Studio 2015\Projects\2.3\Zad4\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\maku\Documents\Visual Studio 2015\Projects\2.3\Zad4\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\maku\Documents\Visual Studio 2015\Projects\2.3\Zad4\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\maku\Documents\Visual Studio 2015\Projects\2.3\Zad4\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\2.3\Zad4\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\2.3\Zad4\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\2.3\Zad4\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

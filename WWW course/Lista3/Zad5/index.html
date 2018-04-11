@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<meta charset="UTF-8">
+	<title>Tytuł Strony</title>
+	<style>
+		ul.cssprop
+		{
+			list-style-image: url('dot-resized.png');
+			font-size: 48px;
+		}
+		ul.before li
+		{
+			font-size: 48px;
+			list-style: none;
+		}
+		ul.before li::before
+		{
+			display: inline-block;
+			content:"";
+			height: 1em;
+			width: 1em;
+			background-image: url('dot.png');
+			background-position: center center; 
+			background-repeat:no-repeat;
+			background-size: 28px;
+			vertical-align: text-top;
+		}
+
+		ul.cssbackground li
+		{
+			font-size: 48px;
+			margin: 0;
+			padding: 36px 0 36px 44px;
+			list-style: none;
+			background-image: url("dot.png");
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: 28px;
+		}
+	</style>
+</head>
+
+
+<body>
+		<ul class="cssprop">
+				<li>Element 1</li>
+				<li>Element 2</li>
+				<li>Element 3</li>
+				<li>Element 4</li>
+			</ul>
+		
+			<ul class="before">
+					<li>Element 1</li>
+					<li>Element 2</li>
+					<li>Element 3</li>
+					<li>Element 4</li>
+			</ul>
+		
+			<ul class="cssbackground">
+					<li>Element 1</li>
+					<li>Element 2</li>
+					<li>Element 3</li>
+					<li>Element 4</li>
+			</ul>
+</body>
+
+</html>

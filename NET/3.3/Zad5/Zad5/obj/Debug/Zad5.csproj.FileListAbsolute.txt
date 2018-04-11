@@ -1,0 +1,6 @@
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad5\Zad5\bin\Debug\Zad5.exe.config
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad5\Zad5\bin\Debug\Zad5.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad5\Zad5\bin\Debug\Zad5.pdb
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad5\Zad5\obj\Debug\Zad5.csprojResolveAssemblyReference.cache
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad5\Zad5\obj\Debug\Zad5.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad5\Zad5\obj\Debug\Zad5.pdb

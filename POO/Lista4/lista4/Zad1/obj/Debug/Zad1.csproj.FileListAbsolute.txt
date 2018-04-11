@@ -1,0 +1,9 @@
+C:\uczelnia\POO\Lista4\lista4\lista4\bin\Debug\lista4.exe.config
+C:\uczelnia\POO\Lista4\lista4\lista4\bin\Debug\lista4.exe
+C:\uczelnia\POO\Lista4\lista4\lista4\bin\Debug\lista4.pdb
+C:\uczelnia\POO\Lista4\lista4\lista4\bin\Debug\nunit.framework.dll
+C:\uczelnia\POO\Lista4\lista4\lista4\bin\Debug\nunit.framework.xml
+C:\uczelnia\POO\Lista4\lista4\lista4\obj\Debug\Zad1.csprojResolveAssemblyReference.cache
+C:\uczelnia\POO\Lista4\lista4\lista4\obj\Debug\Zad1.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista4\lista4\lista4\obj\Debug\lista4.exe
+C:\uczelnia\POO\Lista4\lista4\lista4\obj\Debug\lista4.pdb

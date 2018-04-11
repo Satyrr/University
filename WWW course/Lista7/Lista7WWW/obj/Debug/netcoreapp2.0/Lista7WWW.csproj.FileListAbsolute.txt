@@ -1,0 +1,11 @@
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\bin\Debug\netcoreapp2.0\Lista7WWW.deps.json
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\bin\Debug\netcoreapp2.0\Lista7WWW.runtimeconfig.json
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\bin\Debug\netcoreapp2.0\Lista7WWW.runtimeconfig.dev.json
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\bin\Debug\netcoreapp2.0\Lista7WWW.dll
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\bin\Debug\netcoreapp2.0\Lista7WWW.pdb
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\obj\Debug\netcoreapp2.0\Lista7WWW.csprojResolveAssemblyReference.cache
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\obj\Debug\netcoreapp2.0\Lista7WWW.csproj.CoreCompileInputs.cache
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\obj\Debug\netcoreapp2.0\Lista7WWW.AssemblyInfoInputs.cache
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\obj\Debug\netcoreapp2.0\Lista7WWW.AssemblyInfo.cs
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\obj\Debug\netcoreapp2.0\Lista7WWW.dll
+c:\users\satyr\Source\Repos\Lista7WWW\Lista7WWW\obj\Debug\netcoreapp2.0\Lista7WWW.pdb

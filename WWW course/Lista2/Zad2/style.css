@@ -1,0 +1,12 @@
+a { font-size: 40px;}
+a:hover, a:hover:visited { 
+    color: green;
+    font-size: 45px;
+}
+a:active { 
+    color: red;
+    font-size: 45px;
+}
+a:visited { 
+    color: yellow;
+}

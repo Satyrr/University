@@ -1,0 +1,6 @@
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad4sem\Zad4sem\bin\Debug\Zad4sem.exe.config
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad4sem\Zad4sem\bin\Debug\Zad4sem.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad4sem\Zad4sem\bin\Debug\Zad4sem.pdb
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad4sem\Zad4sem\obj\Debug\Zad4sem.csprojResolveAssemblyReference.cache
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad4sem\Zad4sem\obj\Debug\Zad4sem.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.3\Zad4sem\Zad4sem\obj\Debug\Zad4sem.pdb

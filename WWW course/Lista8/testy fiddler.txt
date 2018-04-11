@@ -1,0 +1,53 @@
+Nowy pacjent:
+POST patients/
+
+Host: localhost:60144
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Content-Type: application/json; charset=utf-8
+Content-Length: 80
+
+{"firstname":"Maciek","surname":"Kulczyk","phoneNumber":"555536726","visits":[]}
+
+
+**************************
+PUT patients/id
+
+Update pacjenta:
+
+Host: localhost:60144
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Content-Type: application/json; charset=utf-8
+Content-Length: 85
+
+{"id":7,"firstname":"Maciek","surname":"Kulczyk","phoneNumber":"3333333","visits":[]}
+
+****************************
+DELETE patient/id
+
+Host: localhost:60144
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Upgrade-Insecure-Requests: 1
+
+
+
+*****************************
+POST patients/1/visits
+
+Host: localhost:60144
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Content-Type: application/json; charset=utf-8
+Content-Length: 102
+
+{"visitDateTime":"2018-11-28T17:57:29.4542206+01:00","paymentStatus":{"status":"paid","amount":120.0}}
+
+*******************************
+PUT patients/1/visits/
+
+{"id":1,"visitDateTime":"2017-11-28T17:57:20.4542206+01:00","paymentStatus":{"status":"pending","amount":400.0}}

@@ -1,0 +1,20 @@
+﻿@model Lista7WWW.Models.Car
+@{
+    ViewData["Title"] = "NewCar";
+}
+
+<h2>NewCar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <table border="1">
+        <tr><td>@Html.LabelFor(e => e.Automaker)</td><td>@Html.EditorFor(e => e.Automaker) @Html.ValidationMessageFor(model => model.Automaker)</td></tr>
+        <tr><td>@Html.LabelFor(e => e.Registration)</td><td>@Html.EditorFor(e => e.Registration) @Html.ValidationMessageFor(model => model.Registration)</td></tr>
+        <tr><td>@Html.LabelFor(e => e.FirstRegistration)</td><td>@Html.EditorFor(e => e.FirstRegistration) @Html.ValidationMessageFor(model => model.FirstRegistration)</td></tr>
+        <tr><td>@Html.LabelFor(e => e.YearOfProduction)</td><td>@Html.EditorFor(e => e.YearOfProduction) @Html.ValidationMessageFor(model => model.YearOfProduction)</td></tr>
+        <tr><td>@Html.LabelFor(e => e.FuelType)</td><td>@Html.EditorFor(e => e.FuelType) @Html.ValidationMessageFor(model => model.FuelType)</td></tr>
+    </table>
+    <input type="submit" />
+    @Html.AntiForgeryToken()
+}

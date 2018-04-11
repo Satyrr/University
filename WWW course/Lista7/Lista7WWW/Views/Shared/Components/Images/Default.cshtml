@@ -1,0 +1,6 @@
+﻿@model string[]
+
+@foreach(var src in Model)
+{
+    <img class="gallery-image" src="@src" alt="obrazek" asp-append-version="true"/>
+}

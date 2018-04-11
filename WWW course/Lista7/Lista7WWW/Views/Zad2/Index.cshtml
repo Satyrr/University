@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Ludzie</h2>
+
+<table class="table">
+    @foreach (var p in Model)
+    {
+        <tr >
+            <td>@p.FirstName</td>
+            <td>@p.LastName</td>
+            <td>@p.Address</td>
+        </tr>
+    }
+</table>
+
+<ul class="pagination">
+    @for (int i = 1; i <= ViewBag.pageNumber; i++)
+    {
+        string activeClass = "";
+        @if(i == ViewBag.currentPage)
+        {
+            activeClass = "active";
+        }
+
+        <li class="@activeClass"><a href="@Url.Action("Index", new { pageNr = i})">@i</a></li>
+    } 
+</ul>

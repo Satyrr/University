@@ -1,0 +1,9 @@
+Element article nie może być przodkiem elementów: ----
+Element aside nie może być przodkiem elementów: ----
+Element header nie może być przodkiem elementów: header, footer
+Element footer nie może być przodkiem elementów: header, footer
+Element address nie może być przodkiem elementów: article, aside, header, footer, address, section, nav, h1, h2
+Element side nie może być przodkiem elementów: ---
+Element nav nie może być przodkiem elementów: ---
+Elementy h1 i h2 nie mogą być przodkiem elementów: article, aside, header, footer, address, section, nav, h1, h2
+Element a nie może być przodkiem elementów: ---

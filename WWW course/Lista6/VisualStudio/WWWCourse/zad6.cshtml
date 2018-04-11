@@ -1,0 +1,36 @@
+﻿@{
+    DateTime contentModified = File.GetLastWriteTime(@"C:\Users\Satyr\Documents\Visual Studio 2015\Projects\WWWCourse\WWWCourse\pies.jpg");
+    contentModified = DateTime.Parse(contentModified.ToString());
+    Response.Cache.SetLastModified(contentModified);
+
+    string header = Request.Headers["If-Modified-Since"];
+    DateTime isModified;
+    if (header != null && DateTime.TryParse(header, out isModified))
+    {
+        if (isModified >= contentModified)
+        {
+            Response.StatusCode = 304;
+            Response.SuppressContent = true;
+        }
+    }
+
+    header = Request.Headers["If-Unmodified-Since"];
+    if(header != null && isModified != null)
+    {
+
+    }
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    
+</head>
+<body>
+    <h2>Aktualny czas: @DateTime.Now</h2>
+    <img src="pies.jpg" alt="pies"/>
+</body>
+</html>

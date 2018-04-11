@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<meta charset="UTF-8">
+	<title>Tytuł Strony</title>
+	<style>
+		#container
+		{
+			display:flex;
+			width: 70%;
+    		height: 250px;
+			background-color:grey;
+		}
+
+		#container2
+		{
+			display:flex;
+			width: 70%;
+    		height: 250px;
+			background-color:grey;
+			flex-wrap: wrap;
+		}
+
+		.flexitem
+		{
+			background-color: green;
+			width:100px;
+			flex-grow: 1;
+		}
+		.flexitem:nth-child(2)
+		{
+			background-color: red;
+			width:100px;
+			flex: 5 1 100px;
+		}
+
+		.flexitem:nth-child(3)
+		{
+			background-color: blue;
+			width:100px;
+			flex:1 5 100px;
+		}
+
+		.flexitem2
+		{
+			background-color: green;
+			width:200px;
+			flex: 0 0 50px;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div id="container">
+		<div class="flexitem">Item 1</div>
+		<div class="flexitem">Item 2</div>
+		<div class="flexitem">Item 3</div>
+		<div class="flexitem">Item 4</div>
+		<div class="flexitem">Item 5</div>
+		<div class="flexitem">Item 6</div>
+	</div>
+
+	<div id="container2">
+			<div class="flexitem2">Item 1</div>
+			<div class="flexitem2">Item 2</div>
+			<div class="flexitem2">Item 3</div>
+			<div class="flexitem2">Item 4</div>
+			<div class="flexitem2">Item 5</div>
+			<div class="flexitem2">Item 6</div>
+		</div>
+</body>
+
+</html>

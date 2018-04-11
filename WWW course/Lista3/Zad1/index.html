@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.divclass
+		{
+			width:300px;
+			height:300px;
+
+			padding:10px;
+			margin:20px;
+
+			background-color: green;
+			border: solid 4px red;
+			border: solid 3px;
+		}
+		.spanclass
+		{
+			/* elementy inline ignorują wartości szerokość i wysokość */
+			width:300px;
+			height:300px;
+
+			/*padding i margin tylko poziome*/
+			padding:10px;
+			margin:10px;
+
+			background-color: green;
+			border: solid 4px red;
+		}
+		.divfloat
+		{
+			width:300px;
+			height:300px;
+
+			padding:10px;
+			/* margin nie collapsuje?*/
+			margin:20px;
+
+			background-color: green;
+			border: solid 4px red;
+			border: solid 3px;
+			float:left;
+		}
+	</style>
+
+	<meta charset="UTF-8">
+	<title>Tytuł Strony</title>
+</head>
+
+
+<body>
+	<span class="spanclass">To jest span</span>
+	<span class="spanclass">To jest span</span>
+	
+	<div class="divclass">To jest div</div>
+	<div class="divclass">To jest div</div>
+
+	<div class="divfloat">To jest div float</div>
+	<div class="divfloat">To jest div float</div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+li:first-of-type
+{
+	color:red;
+	font-size: 20px;
+}
+
+li:last-of-type
+{
+	color:green;
+	font-size: 10px;
+}
+
+p:only-of-type
+{
+	text-decoration: underline;
+}
+span:only-of-type
+{
+	text-decoration: underline;
+}
+
+li:nth-child(3)
+{
+	font-weight: bold;
+}
+
+li:nth-last-child(2) 
+{
+	background: yellow;
+} 
+p:nth-of-type(2)
+{
+	color:green;
+}
+span:nth-last-of-type(2)
+{
+	color:purple;
+}
+span:last-child:hover
+{
+	color:chartreuse;
+}
+:root { 
+	background:azure;
+}
+
+div#emptydiv
+{
+	width:100px;
+	height:100px;
+}
+div:empty
+{
+	background-color:gold;
+	margin: 5px;
+}
+:not(div) {
+ font-family:fantasy;
+}
+body
+{
+	font-family:Arial, Helvetica, sans-serif;
+}
+p::selection
+{
+	color: red; 
+	background: yellow;
+}
+div.onlychild_div, div.manychild_div
+{
+	border: solid 1px;
+}

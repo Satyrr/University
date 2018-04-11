@@ -1,0 +1,49 @@
+html
+{
+    height:100%;
+}
+body
+{
+    display:flex;
+    flex-direction: column;
+    min-height:100%;
+}
+
+header
+{
+    display:flex;
+    flex: 0 0 auto;
+    background-color:grey;
+    border: solid 1px black;
+}
+
+ul
+{
+    display:flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li
+{
+    flex: 1 1 auto;
+    padding:2px;
+    border: solid 1px black;
+    background-color:cyan;
+    margin: 0px;
+}
+
+main
+{
+    flex: 1 1 100%;
+    background-color: rgba(203, 241, 202, 0.808);
+    padding: 10px;
+}
+
+footer
+{
+    flex: 0 0 auto;
+    background-color: rgba(227, 230, 92, 0.808);
+    padding: 10px;
+}

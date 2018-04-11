@@ -1,0 +1,41 @@
+.googlemap
+{
+    width: 700px;
+    height: 500px;
+    border: 1px solid black;
+    margin: 50px auto;
+}
+
+.markers-div
+{
+    width:700px;
+    margin: 20px auto;
+}
+
+ul
+{
+    padding: 0px;
+    border-left: 3px solid black;
+}
+
+.marker-list-element
+{
+    margin:0px;
+    list-style-type: none;
+    padding: 3px;
+    font-size: 1.2em;
+    color: blue;
+}
+
+.marker-list-element:hover
+{
+    
+    font-weight: 900;
+    cursor: pointer;
+
+}
+
+.active-list-element
+{
+    font-weight: 900;
+}

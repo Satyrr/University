@@ -1,0 +1,9 @@
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\bin\Debug\Zad1.exe.config
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\bin\Debug\Zad1.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\bin\Debug\Zad1.pdb
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\obj\Debug\Zad1.csprojResolveAssemblyReference.cache
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\obj\Debug\Zad1.Form1.resources
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\obj\Debug\Zad1.Properties.Resources.resources
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\obj\Debug\Zad1.csproj.GenerateResource.Cache
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\obj\Debug\Zad1.exe
+C:\Users\Satyr\Documents\Visual Studio 2015\Projects\Win32 - uczelnia\3.1\Zad1\Zad1\obj\Debug\Zad1.pdb

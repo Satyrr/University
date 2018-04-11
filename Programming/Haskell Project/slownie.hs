@@ -1,43 +1,90 @@
-import Slownie
-import System.Environment
+module Slownie (Rodzaj(..), Waluta(..), slownie) where
+
+data Rodzaj = Meski | Zenski | Nijaki deriving Show
+data Waluta = Waluta {
+    mianownik_poj :: String,
+    mianownik_mn :: String,
+    dopelniacz_mn :: String,
+    rodzaj :: Rodzaj
+} deriving Show
+
+data Tysiac = Tysiac {
+    mianownik_poj1 :: String,
+    mianownik_mn1 :: String,
+    dopelniacz_mn1 :: String
+} deriving Show
+
+slownie :: Waluta -> Integer -> String
+slownie waluta liczba 
+    | liczba > 10^6000 - 1 = "mnóstwo"
+    | otherwise =  (if liczba < 0 then "minus " else "") ++ (kwotaSlownie rdz kwota 0 ) ++ walutaSlownie waluta kwota
+       where rdz = rodzaj waluta
+             kwota = bezwzgledna liczba
 
 
-main = do 
-  (arg1:arg2:rest) <- getArgs
-  putStrLn $ slownie (okreslWalute arg2) (read arg1)
+kwotaSlownie :: Rodzaj -> Integer -> Integer -> String -- kwotaSlownie rodzaj_waluty kwota akumulator_1000^acc
+kwotaSlownie _ 0 0 = "zero "
+kwotaSlownie _ 0 _ = ""
+kwotaSlownie Nijaki 1 0 = "jedno "
+kwotaSlownie Zenski 1 0 = "jedna " 
+kwotaSlownie Zenski liczba 0 
+	| (liczba `mod` 10 == 2) && (liczba `mod` 100 /= 12) = reszta ++ ponizejTysiacaSlownie bezCyfry ++ "dwie "
+    where reszta = kwotaSlownie Zenski (liczba `div` 1000) 1
+          bezCyfry = (liczba - (liczba `mod` 10)) `mod` 1000
+kwotaSlownie waluta liczba mnoznik
+	| ((liczba `mod` 1000) == 1) && mnoznik > 0 = reszta ++ (mnoznikSlownie liczba mnoznik) -- brak 'jeden' przed 'tysiac', 'milion' itd., 
+	| otherwise = reszta ++ (ponizejTysiacaSlownie ponizejTysiaca) ++ (mnoznikSlownie liczba mnoznik)
+    where reszta = kwotaSlownie waluta (liczba `div` 1000) (mnoznik+1)
+          ponizejTysiaca = liczba `mod` 1000
 
-okreslWalute :: String -> Waluta
-okreslWalute w = case w of "AUD" -> Waluta "dolar australijski" "dolary australijskie" "dolarów australijskich" Meski 
-                           "BGN" -> Waluta "lew bułgarski" "lewy bułgarskie" "lewów bułgarskich" Meski
-                           "BRL" -> Waluta "real brazylijski" "reale brazylijskie" "reali brazylijskich" Meski
-                           "BYR" -> Waluta "białoruski rubel" "białoruskie ruble" "białoruskich rubli" Meski
-                           "CAD" -> Waluta "dolar kanadyjski" "dolary kanadyjskie" "dolarów kanadyjskich" Meski
-                           "CHF" -> Waluta "frank szwajcarski" "franki szwajcarskie" "franków szwajcarskich" Meski
-                           "CNY" -> Waluta "yuan chiński" "yuany chińskie" "yuanów chińskich" Meski
-                           "CZK" -> Waluta "korona czeska" "korony czeskie" "koron czeskich" Zenski
-                           "DKK" -> Waluta "korona duńska" "korony duńskie" "koron duńskich" Zenski
-                           "EUR" -> Waluta "euro" "euro" "euro" Nijaki
-                           "GBP" -> Waluta "funt szterling" "funty szterlingi" "funtów szterlingów" Meski
-                           "HKD" -> Waluta "dolar hongkoński" "dolary hongkońskie" "dolarów hongkońskich" Meski
-                           "HRK" -> Waluta "kuna chorwacka" "kuny chorawckie" "kun chorwackich" Zenski
-                           "HUF" -> Waluta "forint węgierski" "forinty węgierskie" "forintów węgierskich" Meski
-                           "IDR" -> Waluta "rupia indonezyjska" "rupie indonezyjskie" "rupii indonezyjskich" Zenski
-                           "ISK" -> Waluta "korona islandzka" "korony islandzkie" "koron islandzkich" Zenski
-                           "JPY" -> Waluta "jen japoński" "jeny japońskie" "jenów japońskich" Meski
-                           "KRW" -> Waluta "won południowokoreański" "wony południowokoreańskie" "wonów południowokoreańskich" Meski
-                           "MXN" -> Waluta "peso meksykańskie" "peso meksykańskie" "peso meksykańskich" Nijaki
-                           "MYR" -> Waluta "ringgit malezyjski" "ringgity malezyjskie" "ringgitów malezyjskich" Meski
-                           "NOK" -> Waluta "korona norweska" "korony norweskie" "koron norweskich" Zenski
-                           "NZD" -> Waluta "dolar nowozelandzki" "dolary nowozelandzkie" "dolarów nowozelandzkich" Meski
-                           "PHP" -> Waluta "peso filipińskie" "peso filipińskie" "peso filipińskich" Nijaki
-                           "PLN" -> Waluta "złoty" "złote" "złotych" Meski
-                           "RON" -> Waluta "nowa leja rumuńska" "nowe leje rumuńskie" "nowych leji rumuńskich" Zenski
-                           "RUB" -> Waluta "rubel rosyjski" "ruble rosyjskie" "rubeli rosyjskich" Meski
-                           "SDR" -> Waluta "specjalne prawo ciągnienia" "specjalne prawa ciągnienia" "specjalnych praw ciągnienia" Meski
-                           "SEK" -> Waluta "korona szwedzka" "korony szwedzkie" "koron szwedzkich" Zenski
-                           "SGD" -> Waluta "dolar singapurski" "dolary singapurskie" "dolarów singapurskich" Meski
-                           "THB" -> Waluta "baht tajski" "bahty tajskie" "bahtów tajskich" Meski
-                           "TRY" -> Waluta "nowa lira turecka" "nowe liry tureckie" "nowych lir tureckich" Zenski
-                           "UAH" -> Waluta "hrywna ukraińska" "hrywny ukraińskie" "hrywn ukraińskich" Zenski
-                           "USD" -> Waluta "dolar amerykański" "dolary amerykańskie" "dolarów amerykańskich" Meski
-                           "ZAR" -> Waluta "rand południowoafrykański" "randy południowoafrykańskie" "randów południowoafrykańskich" Meski
+
+
+ponizejTysiacaSlownie :: Integer -> String
+ponizejTysiacaSlownie pelnaKwota
+	| d/=1 = (reprezentacjaSlowna s setki) ++  (reprezentacjaSlowna d dziesiatki) ++ (reprezentacjaSlowna c cyfry)
+	| d==1 = (reprezentacjaSlowna s setki) ++ (reprezentacjaSlowna c nascie)
+    where (s,d,c) = cyfryLiczby (bezwzgledna pelnaKwota)
+
+reprezentacjaSlowna :: Integer -> [(Integer,String)] -> String
+reprezentacjaSlowna liczba ((cyfra,slowo):reszta)
+    | cyfra == liczba = slowo
+    | otherwise = reprezentacjaSlowna liczba reszta
+
+setki :: [(Integer,String)]
+setki = zip [0..9] ["" ,"sto ", "dwieście ", "trzysta ", "czterysta ", "pięćset ", "sześcset ", "siedemset ", "osiemset ", "dziewięćset "]
+nascie :: [(Integer,String)]
+nascie = zip [0..9] ["dziesięć ", "jedenaście ", "dwanaście ", "trzynaście ", "czternaście ", "piętnaście ", "szesnaście ", "siedemnaście ", "osiemnaście ", "dziewiętnaście "]
+dziesiatki :: [(Integer,String)]
+dziesiatki = zip [0..9] ["", "", "dwadzieścia ", "trzydzieści ", "czterdzieści ", "pięćdziesiąt ", "sześćdziesiąt ", "siedemdziesiąt ", "osiemdziesiąt ","dziewięćdziesiąt "]
+cyfry :: [(Integer,String)]
+cyfry = zip [0..9] ["", "jeden ", "dwa ", "trzy ", "cztery ", "pięć ", "sześć ", "siedem ", "osiem ", "dziewięć "]
+	
+
+cyfryLiczby :: Integer -> (Integer, Integer, Integer)
+cyfryLiczby liczba = (setki, dzies, cyf)
+	where setki = liczba `div` 100
+	      dzies = (liczba `div` 10) `mod` 10
+	      cyf   = liczba `mod` 10
+
+mnoznikSlownie :: Integer -> Integer -> String -- tysiac, milion, miliard...
+mnoznikSlownie liczba mnoznik 
+	| kwota == 0 = ""
+    | kwota == 1 = mianownik_poj1 tysiace
+    | (kwota `mod` 100) `elem` [12,13,14] = dopelniacz_mn1 tysiace
+    | (kwota `mod` 10) `elem` [2,3,4] = mianownik_mn1 tysiace
+    | otherwise = dopelniacz_mn1 tysiace
+    where kwota = (bezwzgledna liczba) `mod` 1000
+          tysiace = okreslMnoznik mnoznik
+
+
+okreslMnoznik :: Integer -> Tysiac
+okreslMnoznik k 
+	| k == 0 = Tysiac "" "" ""
+	| k == 1 = Tysiac "tysiąc " "tysiące " "tysięcy "
+    | k `mod` 2 == 0 = Tysiac (pk ++ "lion ") (pk ++ "liony ") (pk ++ "lionów ")
+    | k `mod` 2 == 1 = Tysiac (pk ++ "liard ") (pk ++ "liardy ") (pk ++ "liardów ")
+    where pk = przedrostek (k `div` 2)  
+
+przedrostki1 :: [(Integer,String)]
+przedrostki1 = zip [0..9] ["" ,"mi", "bi", "try", "kwadry", "kwinty", "seksty", "septy", "okty", "noni"]
+przedr

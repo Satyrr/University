@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ListaStudentow xmlns="MojeDane">
+  <Student>
+    <Imie>Jan</Imie>
+    <Nazwisko>Kowalski</Nazwisko>
+    <DataUr>1950-02-07</DataUr>
+    <Adresy>
+      <AdresStaly>44-300 Wodzislaw Slaski, ul. Piaskowa 2</AdresStaly>
+      <AdresTymczasowy>44-500 Wroclaw, ul. Wyszynskiego 105</AdresTymczasowy>
+    </Adresy>
+    <Zajecia>
+      <Przedmiot>
+        <Nazwa>.NET</Nazwa>
+        <Oceny>
+          <Ocena>4</Ocena>
+          <Ocena>3</Ocena>
+          <Ocena>3,5</Ocena>
+        </Oceny>
+      </Przedmiot>
+      <Przedmiot>
+        <Nazwa>AISD</Nazwa>
+        <Oceny>
+          <Ocena>3</Ocena>
+          <Ocena>5</Ocena>
+          <Ocena>4,5</Ocena>
+        </Oceny>
+      </Przedmiot>
+    </Zajecia>
+  </Student>
+  <Student>
+    <Imie>Marcin</Imie>
+    <Nazwisko>Gruza</Nazwisko>
+    <DataUr>1950-02-07</DataUr>
+    <Adresy>
+      <AdresStaly>44-300 Wodzislaw Slaski, ul. Piaskowa 2</AdresStaly>
+      <AdresTymczasowy>44-500 Wroclaw, ul. Wyszynskiego 105</AdresTymczasowy>
+    </Adresy>
+    <Zajecia>
+      <Przedmiot>
+        <Nazwa>.NET</Nazwa>
+        <Oceny>
+          <Ocena>4</Ocena>
+          <Ocena>3</Ocena>
+          <Ocena>3,5</Ocena>
+        </Oceny>
+      </Przedmiot>
+      <Przedmiot>
+        <Nazwa>AISD</Nazwa>
+        <Oceny>
+          <Ocena>3</Ocena>
+          <Ocena>5</Ocena>
+          <Ocena>4,5</Ocena>
+        </Oceny>
+      </Przedmiot>
+    </Zajecia>
+  </Student>
+</ListaStudentow>

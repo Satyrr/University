@@ -1,0 +1,11 @@
+C:\uczelnia\POO\Lista5\Lista5\bin\Debug\netcoreapp2.0\Lista5.deps.json
+C:\uczelnia\POO\Lista5\Lista5\bin\Debug\netcoreapp2.0\Lista5.runtimeconfig.json
+C:\uczelnia\POO\Lista5\Lista5\bin\Debug\netcoreapp2.0\Lista5.runtimeconfig.dev.json
+C:\uczelnia\POO\Lista5\Lista5\bin\Debug\netcoreapp2.0\Lista5.dll
+C:\uczelnia\POO\Lista5\Lista5\bin\Debug\netcoreapp2.0\Lista5.pdb
+C:\uczelnia\POO\Lista5\Lista5\obj\Debug\netcoreapp2.0\Lista5.csprojResolveAssemblyReference.cache
+C:\uczelnia\POO\Lista5\Lista5\obj\Debug\netcoreapp2.0\Lista5.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista5\Lista5\obj\Debug\netcoreapp2.0\Lista5.AssemblyInfoInputs.cache
+C:\uczelnia\POO\Lista5\Lista5\obj\Debug\netcoreapp2.0\Lista5.AssemblyInfo.cs
+C:\uczelnia\POO\Lista5\Lista5\obj\Debug\netcoreapp2.0\Lista5.dll
+C:\uczelnia\POO\Lista5\Lista5\obj\Debug\netcoreapp2.0\Lista5.pdb

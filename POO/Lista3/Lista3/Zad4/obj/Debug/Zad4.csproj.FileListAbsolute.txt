@@ -1,0 +1,7 @@
+C:\uczelnia\POO\Lista3\Lista3\Zad4\bin\Debug\Zad4.exe.config
+C:\uczelnia\POO\Lista3\Lista3\Zad4\bin\Debug\Zad4.exe
+C:\uczelnia\POO\Lista3\Lista3\Zad4\bin\Debug\Zad4.pdb
+C:\uczelnia\POO\Lista3\Lista3\Zad4\obj\Debug\Zad4.csprojResolveAssemblyReference.cache
+C:\uczelnia\POO\Lista3\Lista3\Zad4\obj\Debug\Zad4.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista3\Lista3\Zad4\obj\Debug\Zad4.exe
+C:\uczelnia\POO\Lista3\Lista3\Zad4\obj\Debug\Zad4.pdb

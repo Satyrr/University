@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "Gallery";
+    Layout = "~/Views/Zad3/SerwisLayout.cshtml";
+}
+
+@Html.Partial("Menu")
+<h2>Gallery</h2>
+
+@await Component.InvokeAsync("Images")

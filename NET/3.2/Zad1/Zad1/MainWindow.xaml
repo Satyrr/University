@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zad1"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Zad1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <GroupBox x:Name="gbUczelnia" Header="Uczelnia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="137" Width="497">
+            <Grid HorizontalAlignment="Left" Height="127" VerticalAlignment="Top" Width="477" Margin="0,0,0,-12">
+                <Label x:Name="label" Content="Nazwa:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,29,0,0"/>
+                <Label x:Name="label1" Content="Adres:" HorizontalAlignment="Left" Margin="5,60,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbxName" HorizontalAlignment="Left" Height="23" Margin="53,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="414"/>
+                <TextBox x:Name="tbxAddress" HorizontalAlignment="Left" Height="23" Margin="53,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="414"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gbRodzaj" Header="Rodzaj studiów" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.772,2.381" Margin="10,152,0,0" Height="122" Width="497">
+            <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="487" Margin="0,0,-2,0">
+                <ComboBox x:Name="cbxCycle" HorizontalAlignment="Left" VerticalAlignment="Top" Width="395" Margin="82,32,0,0">
+                    <ComboBoxItem IsSelected="True">3-letnie</ComboBoxItem>
+                    <ComboBoxItem>3,5-letnie</ComboBoxItem>
+                    <ComboBoxItem>5-letnie</ComboBoxItem>
+                </ComboBox>
+                <Label x:Name="label2" Content="Cykl nauki:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,0,0"/>
+                <CheckBox x:Name="chbDaily" Content="dzienne" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,75,0,0"/>
+                <CheckBox x:Name="chbComplem" Content="uzupełniające" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="171,75,0,0"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="button" Content="Anuluj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="432,289,0,0" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Akceptuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,289,0,0" Click="button_Copy_Click"/>
+
+    </Grid>
+</Window>

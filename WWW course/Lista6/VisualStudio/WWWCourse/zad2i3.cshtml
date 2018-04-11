@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Tytul</title>
+</head>
+<body>
+    @{
+        <h2>Post keys/values</h2>
+        <ol>
+            @foreach (var key in Request.Form.AllKeys)
+            {
+                <li>@(key + ": " + Request.Form[key])</li>
+            }
+        </ol>
+
+        <h2>Get keys/values</h2>
+        <ol>
+            @foreach (var key in Request.QueryString.AllKeys)
+            {
+                <li>@(key + ": " + Request.QueryString[key])</li>
+            }
+        </ol>
+       
+        <h2>Klucz o tej samej wartosci w get i post: @Request["klucz"]</h2>
+
+        <h2>Files</h2>
+        <ol>
+            @foreach (var key in Request.Files.AllKeys)
+            {
+                byte[] imageBytes = new byte[Request.Files[key].ContentLength];
+                Request.Files[key].InputStream.Read(imageBytes, 0, Request.Files[key].ContentLength);
+                <li>@(key + ": ") <img id="image" src="@("data:image/png;base64," + Convert.ToBase64String(imageBytes))" /></li>
+            }
+        </ol>
+
+        <h2>Server keys/values</h2>
+        <ol>
+            @foreach (var key in Request.ServerVariables.AllKeys)
+            {
+                <li>@(key + ": " + Request.ServerVariables[key])</li>
+            }
+        </ol>
+    }
+    <script src="script.js"></script>
+</body>
+</html>

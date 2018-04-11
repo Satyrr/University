@@ -1,0 +1,31 @@
+Functional:
+	1.Narzędzia pozwalające tworzyć samodzielnie niestandardowe raporty (ad hoc) i własne analizy danych
+		-Mało precyzyjne. Jakie raporty, co powinny zawierać?
+	2.Wymiana danych z systemem Płatnik, homebanking i inne 
+		-Jakie dokładnie programy powinny być wspierane?
+Usability:
+	1.Graficzny interfejs użytkownika systemu 
+		-Czy interfejs powinien być jednolity we wszystkich modułach(pod względem wyglądu) 
+	2.System musi posiadać dokumentację w języku polskim (w postaci wydruku oraz na nośniku CD / DVD) pozwalającą na samodzielną naukę obsługi każdego obszaru (modułu) 
+		-Jak bardzo szczegółowa dokumentacja?
+Reliability:
+	1.System posiada możliwość wykonywania kopii zapasowych danych bez konieczności wylogowania użytkowników, z możliwością odtworzenia backupu przyrostowego do dowolnego punktu w czasie z wykonanych wcześniej kopii zapasowych. 
+		-Czy kopie powinny wykonywać się same?
+
+Performance:
+	1.Baza danych musi zapewnić przechowywanie minimum 1 TB danych
+		-Czy wystarczy do przechowania wszystkich danych?
+Supportability:
+	1.System obsługi administracyjnej posiada możliwość automatycznego pobierania aktualnych wersji aplikacji z zasobu sieciowego
+		-czy system musi działać podczas aktualizacji?
+Design:
+	1.System posiada menu tekstowe i menu graficzne
+		-Jak powinno funkcjonować menu tekstowe?
+Implementation:
+	1.Zapewnienie, że do utrzymania baz danych zastosowane zostaną powszechnie znane na rynku, komercjalne silniki bazodanowe z wykupioną bezterminową licencją, gwarantującą dostęp dla wszystkich użytkowników (np. licencja na lokalizację), a utrzymanie ww. silników u Zamawiającego musi być możliwe, przez co najmniej dwa inne podmioty niezależne od Wykonawcy
+		-Mało mierzalne.
+	2.Serwer bazy danych pracuje w środowisku systemowym 64 bitowym
+		-Jaki system?
+Interface:
+	1.System posiada możliwość podłączenia wielu baz danych do jednej instancji serwera bazy danych, przy czym każda baza może zawierać wiele schematów danych 
+		-ile baz maksymalnie?
