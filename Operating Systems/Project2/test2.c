@@ -33,7 +33,7 @@ int main()
 	int fildes = fs_open("plik1");
 	int fildes2 = fs_open("plik2");
 
-	//tablice z danymi do zapisu
+	//tablice z danymi do zapisu, tab2 nadpisze dane z tab[4000:6000]
 	unsigned char tab[6000];
 	unsigned char tab2[2000];
 	unsigned char tab3[6000];
@@ -54,7 +54,7 @@ int main()
 	//obciecie plik1 do 4000 bajtow
 	fs_truncate(fildes,4000);
 
-	//zapisanie tab3 do plik1 
+	//zapisanie tab2 do plik1 
 	fs_write(fildes,(void*)(tab2),2000);
 
 	//ustawienie seek_p na poczatek pliku

@@ -1,0 +1,23 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+auto br0
+iface br0 inet manual
+	bridge_ports none
+	bridge_stp on
+
+auto br1
+iface br1 inet manual
+	bridge_ports none
+	bridge_stp on
+
+auto br2
+iface br2 inet manual
+	bridge_ports none
+	bridge_stp on
+
+auto br3
+iface br3 inet manual
+	bridge_ports none
+	bridge_stp on
