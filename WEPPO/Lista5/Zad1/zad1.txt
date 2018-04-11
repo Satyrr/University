@@ -1,0 +1,13 @@
+pulapki na zadaniach : https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit
+
+
+GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: max-age=0
+User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7
+Connection: close
+

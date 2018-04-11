@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Wysyłanie pliku</title>
+    </head>
+
+    <body>
+        <% if ( locals.id ) { %>
+            Przekazany parameter: <%= locals.id %>
+            <% var options = Array.from(new Array(parseInt(locals.id)), (x,i) => i) %>
+            <% include szablon %>
+        <% } %>
+        
+        
+    </body>
+</html>

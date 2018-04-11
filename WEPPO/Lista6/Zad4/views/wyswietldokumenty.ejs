@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Dokumenty</title>
+    </head>
+
+    <body>
+        <% if( locals.user ) { %>
+            <h2>Twoje dokumenty:
+            </h2>
+            <ul>
+            <% for(var doc of locals.user.documents){ %>
+                <li><%= doc.content %></li>
+            <% }%>
+            </ul>
+        <% } else{ %>
+            Niepoprawny link
+        <% } %>
+        
+    </body>
+</html>

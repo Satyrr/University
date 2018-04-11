@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Cookies</title>
+    </head>
+
+    <body>
+        <% if( locals.session ) { %>
+            <p>Zapisana sesja:</p>
+            <ul>
+            <% for(var sess in locals.session){ %>
+                <li><%= sess + " " + locals.session[sess] %></li>
+            <% }%>
+            </ul>
+        <% } else{ %>
+            Brak sesji na serwerze
+        <% } %>
+        
+    </body>
+</html>

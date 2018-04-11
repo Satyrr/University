@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Cookies</title>
+    </head>
+
+    <body>
+        <% if( locals.cookies.testcookie ) { %>
+            <p>Twoja przegladarka obsługuje cookies.
+                Zapisane ciastka:
+            </p>
+            <ul>
+            <% for(var cookie in locals.cookies){ %>
+                <li><%= cookie %></li>
+            <% }%>
+            </ul>
+        <% } else{ %>
+            Twoja przeglądarka nie obsługuje cookies
+        <% } %>
+        
+    </body>
+</html>

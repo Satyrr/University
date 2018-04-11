@@ -1,0 +1,2 @@
+SELECT Name, Surname, Address from Osoba2 WHERE Age > 15
+SELECT Name, Surname, Address from Osoba2 WHERE Age = 15

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Wysyłanie pliku</title>
+    </head>
+
+    <body>
+        <form method="post" enctype="multipart/form-data">
+            Plik: <input type="file" name="plik" multiple/>
+            <input type="submit" />
+        </form>
+        <% if ( locals.files ) { // dlaczego mozemy odwolywac sie do niezdefiniowanych pol ? %>
+            <h3>Odebrane pliki:</h3>
+            <ul>
+                <% for(var file of locals.files ) { %>
+                <li><%= file.originalname %></li>
+                <% } %>
+            </ul>
+        <% } %>
+    </body>
+</html>

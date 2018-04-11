@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Formularz zadań</title>
+</head>
+<body>
+    <form method="post" >
+        <div>
+            <label for="firstname">Imię:</label>
+            <input name="firstname" id="firstname" type="text" value="<%= locals.firstname %>"/>
+        </div>
+        <div>
+            <label for="surname">Nazwisko</label>
+            <input name="surname" id="surname" type="text" value="<%= locals.surname %>"/>
+        </div>
+        
+        <div>
+            <label for="course">Zajęcia</label>
+            <input name="course" id="course" type="text" value="<%= locals.course %>"/>
+        </div>
+
+        <% for(var i=1;i<=10;i++){ %>
+			<div>
+                <label for="exercise<%= i %>">Zadanie <%= i %></label>
+                <input name="exercise<%= i %>" id="exercise<%= i %>" type="number" value="<%= locals["exercise" + i] %>"/>
+            </div>
+        <% } %>
+        <br/>
+        <input type="submit" />
+    </form>
+    <% if( locals.error) { %>
+        <div><%= locals.error %></div>
+    <% } %>
+</body>
+</html>

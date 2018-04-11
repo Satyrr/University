@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Wydruk</title>
+    <style>
+        td {
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <div>Imię i nazwisko : <%= locals.firstname + " " + locals.surname %></div>
+    <div>Przedmiot: <%= locals.course %></div>
+    <table>
+        <tr>
+            <th>Zadanie:</th>
+            <% for(var i=1;i<10;i++){ %>
+            <th><%= i %></th>
+            <% } %>
+        </tr>
+        <tr>
+            <th>Punkty:</th>
+            <% for(var i=1;i<10;i++){ %>
+            <td><%= locals["exercise" + i] %></td>
+            <% } %>
+        </tr>
+    </table>
+
+</body>
+</html>
