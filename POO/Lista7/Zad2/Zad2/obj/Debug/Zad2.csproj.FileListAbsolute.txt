@@ -1,0 +1,10 @@
+C:\uczelnia\POO\Lista7\Zad2\Zad2\bin\Debug\Zad2.exe.config
+C:\uczelnia\POO\Lista7\Zad2\Zad2\bin\Debug\Zad2.exe
+C:\uczelnia\POO\Lista7\Zad2\Zad2\bin\Debug\Zad2.pdb
+C:\uczelnia\POO\Lista7\Zad2\Zad2\obj\Debug\Zad2.csprojResolveAssemblyReference.cache
+C:\uczelnia\POO\Lista7\Zad2\Zad2\obj\Debug\Zad2.Form1.resources
+C:\uczelnia\POO\Lista7\Zad2\Zad2\obj\Debug\Zad2.Properties.Resources.resources
+C:\uczelnia\POO\Lista7\Zad2\Zad2\obj\Debug\Zad2.csproj.GenerateResource.cache
+C:\uczelnia\POO\Lista7\Zad2\Zad2\obj\Debug\Zad2.csproj.CoreCompileInputs.cache
+C:\uczelnia\POO\Lista7\Zad2\Zad2\obj\Debug\Zad2.exe
+C:\uczelnia\POO\Lista7\Zad2\Zad2\obj\Debug\Zad2.pdb
