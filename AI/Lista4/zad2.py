@@ -1,12 +1,19 @@
 import random
+from math import sqrt, log
+import time
 
 MEADOW = 0
 TRAP = 1
 MERE = 2
 LOWERCAVE = 3
 UPPERCAVE = 4
-jungle_map_dict = {0:'.', 1:'#', 2:'-', 3:'*', 4:'*'}
-
+jungle_map_dict = {
+	0:'.',
+	1:'#', 
+	2:'-', 
+	3:'*', 
+	4:'*'
+}
 
 RAT = 0
 CAT = 1
@@ -16,7 +23,17 @@ PANTHER = 4
 TIGER = 5
 LION = 6
 ELEPHANT = 7
-animals_dict = {None:'.', 0:'r', 1:'c', 2:'d', 3:'w', 4:'j', 5:'t', 6:'l', 7:'e'}
+animals_dict = {
+	None:'.',
+	0:'r',
+	1:'c', 
+	2:'d', 
+	3:'w', 
+	4:'j', 
+	5:'t', 
+	6:'l', 
+	7:'e'
+}
 
 MIN = 0
 MAX = 1
@@ -43,9 +60,12 @@ class Animal:
 		return Animal(self.type, self.x, self.y, self.player)
 
 class JungleGame:
+
 	@staticmethod
 	def draw_jungle_map():
-		string_map = '\n'.join([''.join([jungle_map_dict[elem] for elem in row]) for row in jungle_map])
+		string_map = '\n'.join([
+			''.join([jungle_map_dict[elem] for elem in row]) 
+			for row in jungle_map])
 		print(string_map)
 		print('\n')
 
@@ -55,17 +75,37 @@ class JungleGame:
 			self.min_animals = self.init_animals(MIN)
 			self.animal_map = [[None] * 7 for _ in range(9)]
 			self.init_animal_map()
+
 			self.passive_moves = 0
 			self.moves_number = 0
+			
 			self.player = MIN if random.random() < 0.5 else MAX
+			self.starting_player = self.player
 		else:
 			self.max_animals = [an.clone() for an in proto_game.max_animals]
 			self.min_animals = [an.clone() for an in proto_game.min_animals]
 			self.animal_map = [[None] * 7 for _ in range(9)]
 			self.init_animal_map()
+
 			self.passive_moves = proto_game.passive_moves
-			self.player = proto_game.player
 			self.moves_number = proto_game.moves_number
+			self.player = proto_game.player
+			self.starting_player = proto_game.starting_player
+
+
+	def hashed(self):
+		min_animals_tuple = [(a.x, a.y, a.type, a.player) 
+			for a in self.min_animals]
+		min_animals_tuple.sort()
+
+		max_animals_tuple = [(a.x, a.y, a.type, a.player) 
+			for a in self.max_animals]
+		max_animals_tuple.sort()
+
+		return (tuple(min_animals_tuple),
+			tuple(max_animals_tuple),
+			self.player)
+
 
 	def init_animals(self, player):
 		if player == MAX:
@@ -125,8 +165,6 @@ class JungleGame:
 		print(string_map)
 		print('\n')
 
-
-
 	def possible_moves(self, player):
 		moves = [] # (x, y, new_x, new_y)
 		animals = self.max_animals if player == MAX else self.min_animals
@@ -140,52 +178,45 @@ class JungleGame:
 		return moves
 
 	def can_move(self, animal, dx, dy):
-		animal_type, init_x, init_y, player = animal.type, animal.x, animal.y, animal.player
+		animal_type, init_x, init_y, player = \
+			animal.type, animal.x, animal.y, animal.player
 		if not self.is_move_valid(init_x+dx, init_y+dy):
 			return False
 
 		target = jungle_map[init_x+dx][init_y+dy]
 		# own cave
-		if target == UPPERCAVE and player == MAX: return False
-		if target == LOWERCAVE and player == MIN: return False
+		if target == UPPERCAVE and player == MAX: 
+			return False
+		if target == LOWERCAVE and player == MIN: 
+			return False
 		# mere
-		if target == MERE and animal_type not in [RAT, TIGER, LION]: return False
+		if target == MERE and animal_type not in [RAT, TIGER, LION]: 
+			return False
 		if target == MERE and animal_type in [TIGER, LION]:
-			if not self.can_jump(animal, dx, dy): return False
-			if self.can_jump(animal, dx, dy): return True
+			if not self.can_jump(animal, dx, dy): 
+				return False
+			if self.can_jump(animal, dx, dy): 
+				return True
 
 		target_animal = self.animal_map[init_x+dx][init_y+dy]
 		if target_animal == None:
 			return True
 
 		# not free field
-		target_animal_type, target_player = target_animal.type, target_animal.player
-		if player == target_player: return False
-		if target in [UPPERCAVE, LOWERCAVE]: return True
-		if target_animal_type > animal_type and not (target_animal_type == ELEPHANT and animal_type == RAT): return False
-		if target == MEADOW and jungle_map[init_x][init_y] == MERE: return False
+		target_animal_type, target_player = \
+			target_animal.type, target_animal.player
+		if player == target_player: 
+			return False
+		if target in [UPPERCAVE, LOWERCAVE]: 
+			return True
+		if target_animal_type > animal_type \
+			and not (target_animal_type == ELEPHANT and animal_type == RAT): 
+			return False
+		if target == MEADOW and jungle_map[init_x][init_y] == MERE: 
+			return False
 
 		return True
 
-	def is_move_valid(self, x, y):
-		return 0 <= x <= 8 and 0 <= y <= 6
-
-	def can_jump(self, animal, dx, dy):
-		animal_type, x, y, player = animal.type, animal.x, animal.y, animal.player
-		x, y = x+dx, y+dy
-		target = jungle_map[x][y]
-		while target == MERE:
-			mere_animal = self.animal_map[x][y]
-			if mere_animal != None and (mere_animal.type, mere_animal.player) == (RAT, 1-player):
-				return False
-			x, y = x+dx, y+dy
-			target = jungle_map[x][y]
-
-		target_animal = self.animal_map[x][y]
-		if target_animal != None and target_animal.type > animal_type: return False
-		if target_animal != None and target_animal.player == player: return False
-		
-		return True
 
 	def do_move(self, move, player):
 		self.moves_number += 1
@@ -204,12 +235,10 @@ class JungleGame:
 		target_x, target_y = x+dx, y+dy
 
 		if self.animal_map[target_x][target_y] != None:
-
 			self.passive_moves = 0
 			devoured_animal = self.animal_map[target_x][target_y]
 			self.animal_map[target_x][target_y] = None
 
-			animals_list = self.min_animals if player == MAX else self.max_animals
 			if player == MAX:
 				self.min_animals.remove(devoured_animal)
 			else:
@@ -221,11 +250,15 @@ class JungleGame:
  		self.animal_map[target_x][target_y].x = target_x
  		self.animal_map[target_x][target_y].y = target_y
 
- 	def result(self):
+	def result(self):
  		if self.animal_map[0][3] != None: return MIN
  		if self.animal_map[8][3] != None: return MAX
  		if len(self.min_animals) == 0: return MAX
  		if len(self.max_animals) == 0: return MIN
+
+ 		if self.terminal():
+ 			return self.terminal_result()
+
  		return -1
 
  	def terminal(self):
@@ -233,137 +266,243 @@ class JungleGame:
  			return True
 
  	def terminal_result(self):
- 		min_values = sorted([animal.type for animal in self.min_animals], reverse=True)
- 		max_values = sorted([animal.type for animal in self.max_animals], reverse=True)
- 		if min_values[-1] > max_values[-1]: return MIN
- 		if min_values[-1] < max_values[-1]: return MAX
+
+ 		#if len(self.min_animals) > len(self.max_animals):
+ 		#	return 0
+ 		#elif len(self.min_animals) < len(self.max_animals):
+ 		#	return 1
+ 		if len(self.min_animals) == 0:
+ 			return MAX
+ 		if len(self.max_animals) == 0:
+ 			return MIN
+
+ 		min_values = sorted([a.type for a in self.min_animals])
+ 		max_values = sorted([a.type for a in self.max_animals])
+ 		if min_values[-1] > max_values[-1]: 
+ 			return MIN
+ 		if min_values[-1] < max_values[-1]: 
+ 			return MAX
  		#for i in range(min(len(min_values), len(max_values))):
  			#if min_values[i] > max_values[i]: return MIN
  			#if min_values[i] < max_values[i]: return MAX
 
- 		min_values = sorted([abs(animal.x-0) + abs(animal.y-3) for animal in self.min_animals])
- 		max_values = sorted([abs(animal.x-8) + abs(animal.y-3) for animal in self.max_animals])
+ 		min_values = sorted([abs(a.x-0) + abs(a.y-3) for a in self.min_animals])
+ 		max_values = sorted([abs(a.x-8) + abs(a.y-3) for a in self.max_animals])
  		for i in range(min(len(min_values), len(max_values))):
- 			if min_values[i] < max_values[i]: return MIN
- 			if min_values[i] > max_values[i]: return MAX
+ 			if min_values[i] < max_values[i]: 
+ 				return MIN
+ 			if min_values[i] > max_values[i]: 
+ 				return MAX
 
- 		return MAX
+ 		return self.starting_player
 
- 	def zad2_experminent(self):
- 		while True:
- 			#self.draw_animal_map(True)
+def experiment(board, min_move_function, max_move_function):
+	while True:
 
- 			if self.player == MIN:
- 				m = self.greedy_move(self.player)
- 			else:
- 				m = self.heuristic_move(self.player)
+		if board.player == MIN:
+			m = min_move_function(board)
+		else:
+			m = max_move_function(board)
 
- 			#self.draw_animal_map()
- 			if m != None:
- 				self.do_move(m, self.player)
- 			
- 			self.player = 1 - self.player
- 			if self.result() > -1:
- 				return self.result(), self.moves_number
- 			if self.terminal():
- 				return self.terminal_result()
+		if m != None:
+			board.do_move(m, board.player)
+		
+		board.player = 1 - board.player
 
- 	def random_experiment(self):
- 		while True:
+		if board.result() > -1:
+			return board.result()
 
- 			m = self.random_move(self.player)
+def random_move(board):
+	moves = board.possible_moves(board.player)
+	if moves:
+		return random.choice(moves)
+	else:
+		return None
 
- 			if m != None:
- 				self.do_move(m, self.player)
- 			#self.draw_animal_map()
- 			self.player = 1 - self.player
- 			if self.result() > -1:
- 				return self.result(), self.moves_number
- 			if self.terminal():
- 				return self.terminal_result()
+def greedy_move(board):
 
- 	def random_move(self, player):
- 		moves = self.possible_moves(player)
+	player = board.player
+	moves = board.possible_moves(player)
 
- 		if moves:
- 			return random.choice(moves)
- 		else:
- 			return None
+	if not moves:
+		return None
 
- 	def greedy_move(self, player):
- 		moves = self.possible_moves(player)
+	new_states = [JungleGame(board) for _ in range(len(moves))]
+	for i in range(len(moves)):
+		new_states[i].do_move(moves[i], player)
+		new_states[i].player = 1-new_states[i].player
 
- 		if not moves:
- 			return None
+	N = 0
+	results = [0] * len(new_states)
 
- 		new_states = [JungleGame(self) for _ in range(len(moves))]
- 		for i in range(len(moves)):
- 			new_states[i].do_move(moves[i], player)
- 			new_states[i].player = 1-new_states[i].player
+	t0 = time.time()
+	#while N < 20000:
+	while time.time() - t0 < 0.05:
+		N += len(new_states)
+		for idx, state in enumerate(new_states):
+			game_copy = JungleGame(state)
+			result = experiment(game_copy, random_move, random_move)
+			#N += game_copy.moves_number - state.moves_number 
 
- 		N = 0
- 		results = [0] * len(new_states)
+			if result == player:
+				results[idx] += 1
+			else:
+				results[idx] -= 1
+		
+	move, _ = max(zip(moves, results), key=lambda x: x[1])
+	print('N', N)
+	return move
 
- 		while N < 20000:
-	 		for idx, state in enumerate(new_states):
-	 			game_copy = JungleGame(state)
-	 			result = game_copy.random_experiment()
-	 			N += game_copy.moves_number - state.moves_number 
-	 			if result == player:
-	 				results[idx] += 1
-	 			else:
-	 				results[idx] -= 1
+def heuristic_move(board):
+	player = board.player
+	moves = board.possible_moves(player)
 
-	 	#print("****** MOVE **********")
-	 	#for st, m, res in zip(new_states, moves, results):
-	 		#print(res)
-	 		#print(m)
-	 		#st.draw_animal_map()
-	 		
- 		move, _ = max(zip(moves, results), key=lambda x: x[1])
+	if not moves:
+		return None
 
- 		return move
+	new_states = [JungleGame(board) for _ in range(len(moves))]
+	for i in range(len(moves)):
+		new_states[i].do_move(moves[i], player)
 
- 	def heuristic_move(self, player):
- 		moves = self.possible_moves(player)
+	results = [0] * len(new_states)
+	for idx, state in enumerate(new_states):
+		results[idx] += distance_heuristic(state, player)
+	#print(results)
+	if player == MAX:
+		move, _ = max(zip(moves, results), key=lambda x: x[1])
+	else:
+		move, _ = min(zip(moves, results), key=lambda x: x[1])
 
- 		if not moves:
- 			return None
-
- 		new_states = [JungleGame(self) for _ in range(len(moves))]
- 		for i in range(len(moves)):
- 			new_states[i].do_move(moves[i], player)
-
- 		results = [0] * len(new_states)
- 		for idx, state in enumerate(new_states):
- 			results[idx] += distance_heuristic(state, player)
-	 	#print(results)
-	 	if player == MAX:
- 			move, _ = max(zip(moves, results), key=lambda x: x[1])
- 		else:
- 			move, _ = min(zip(moves, results), key=lambda x: x[1])
-
- 		return move
+	return move
 
 def distance_heuristic(state, player):
 	max_distance = sum([abs(animal.x-8) + abs(animal.y-3) for animal in state.max_animals])
 	min_distance = sum([abs(animal.x-0) + abs(animal.y-3) for animal in state.min_animals])
 	return min_distance-max_distance
 
+class Monte_Carlo_Node(object):
+
+	def __init__(self):
+		self.plays = 0
+		self.wins = 0
+		self.children = {} # child_nodes, key = move
+		self.moves = None # possible moves
+		self.depth = 0
+
+class Monte_Carlo_tree(object):	
+
+	def __init__(self):
+		self.C = 1.0
+
+	def get_move(self, board):
+		self.root = Monte_Carlo_Node()
+		self.root_player = board.player
+
+		possible_moves = board.possible_moves(board.player)
+		if len(possible_moves) == 0:
+			return None
+		elif len(possible_moves) == 1:
+			return possible_moves[0]
+
+		self.i = 0
+		t0 = time.time()
+		while time.time() - t0 < 0.2:
+			self.i += 1
+			self.run_simulation(board)
+
+		print('i', self.i)
+		root_node = self.root
+		moves = [(root_node.children[m].plays, root_node.children[m].wins, m) 
+			for m in possible_moves if m in root_node.children]
+
+		#print(moves)
+		#print(len(moves))
+		board.draw_animal_map()
+		print(moves)
+		_, _,  best_move = max(moves, key=lambda m: m[0])
+		#_, _,  best_move = max(moves, key=lambda m: float(m[1])/m[0])
+
+		return best_move
+
+	def run_simulation(self, board):
+		board_copy = JungleGame(board)
+		visited = set()
+		visited.add((self.root, board.player))
+
+		tree_node = self.root
+		expanding = True
+		while True:
+
+			#board_copy.draw_animal_map()
+			state_result = board_copy.result()
+			if state_result > -1:
+				winner = state_result
+				break
+
+			possible_moves = board_copy.possible_moves(board_copy.player)
+
+			if tree_node and len(tree_node.children) == len(possible_moves):
+				best_move = None
+				best_value = 0.0
+				for m in possible_moves:
+					child_node = tree_node.children[m]
+					if board_copy.player == self.root_player:
+						win_num = child_node.wins
+					else:
+						win_num = child_node.plays - child_node.wins
+
+					value = float(win_num)/child_node.plays
+					value += self.C*sqrt(log(float(tree_node.plays))/child_node.plays)
+					#print(win_num, child_node.plays, child_node.wins, tree_node.plays, value)
+					if value > best_value:
+						best_value = value
+						best_move = m
+					#print(best_value)
+				move = best_move
+			elif expanding:
+				moves = [m for m in possible_moves if m not in tree_node.children]
+				move = random.choice(moves)
+			else:
+				if possible_moves:
+					move = random.choice(possible_moves)
+				else:
+					move = None
+
+			if move:
+				board_copy.do_move(move, board_copy.player)
+			board_copy.player = 1 - board_copy.player
+			
+			if expanding and not move in tree_node.children:
+				tree_node.children[move] = Monte_Carlo_Node()
+				expanding = False
+
+			if tree_node and move in tree_node.children:
+				visited.add((tree_node.children[move], board_copy.player))
+				tree_node = tree_node.children[move]
+			else:
+				tree_node = None
+			#board_copy.draw_animal_map()
+
+		for node, player in visited:
+			node.plays += 1
+			if winner == self.root_player:
+				node.wins += 1
+
 lost = 0
 win = 0
 import time
 copy_time = 0
 
-for iteration in range(100):
+for iteration in range(50):
     j = JungleGame()
-    #res = j.zad2_experminent()
-    res = j.zad2_experminent()
+    #monte_carlo = Monte_Carlo()
+    monte_carlo = Monte_Carlo_tree()
+    res = experiment(j, heuristic_move, monte_carlo.get_move)
     if res == 0:
         lost += 1
     else:
         win += 1
-    if iteration % 40 == 0: print(iteration)
+    if iteration % 1 == 0: print(iteration)
 
 print("Lost: %d" % lost)
 print("Win: %d" % win)
