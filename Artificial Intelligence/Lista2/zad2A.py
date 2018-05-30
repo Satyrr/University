@@ -22,24 +22,27 @@ def bad_box_position(sokoban_map, box_position):
 		return False
 
 	surr_coords = np.array(box_position) + moves  
+	surr_coords = [tuple(c) for c in list(surr_coords)]
+	return not ((sokoban_map[surr_coords[0]] in 'G.' and sokoban_map[surr_coords[1]] in 'G.') or \
+				(sokoban_map[surr_coords[2]] in 'G.' and sokoban_map[surr_coords[3]] in 'G.'))
 
-	return not ((sokoban_map[tuple(surr_coords[0])] in 'G.' and sokoban_map[tuple(surr_coords[1])] in 'G.') or \
-				(sokoban_map[tuple(surr_coords[2])] in 'G.' and sokoban_map[tuple(surr_coords[3])] in 'G.'))
-
-def possible_new_states(sokoban_map, player_position, box_positions):
+def possible_new_states(sokoban_map, player_pos, box_positions):
 	moves = [(1,0), (-1,0), (0,1), (0,-1)]
 	new_states = []
 	for move in moves:
-		new_player_pos = (player_position[0] + move[0], player_position[1] + move[1])
-		new_box_pos = (player_position[0] + 2*move[0], player_position[1] + 2*move[1])
+		new_player_pos = (player_pos[0] + move[0], player_pos[1] + move[1])
+		new_box_pos = (player_pos[0] + 2*move[0], player_pos[1] + 2*move[1])
 
-		if sokoban_map[new_player_pos] in 'G.' and not (new_player_pos in box_positions):
+		if sokoban_map[new_player_pos] in 'G.'  and not \
+			(new_player_pos in box_positions):
 			new_states.append((new_player_pos, box_positions))
 		elif sokoban_map[new_player_pos] in 'G.' and \
-				sokoban_map[new_box_pos] in 'G.' and not (new_box_pos in box_positions) \
-			and not bad_box_position(sokoban_map, new_box_pos):	
+				sokoban_map[new_box_pos] in 'G.' and not \
+				new_box_pos in box_positions and not \
+				bad_box_position(sokoban_map, new_box_pos):	
 
-			new_box_positions = [pos for pos in box_positions if pos != new_player_pos]
+			new_box_positions = [pos 
+				for pos in box_positions if pos != new_player_pos]
 			new_box_positions.append(new_box_pos)
 
 			if check_if_won(sokoban_map, new_box_positions):
@@ -71,25 +74,27 @@ def find_moves_A(sokoban_map, init_player_position, init_box_positions):
 	q = [] 
 	cost = Aheuristic(sokoban_map, init_player_position, init_box_positions)
 	heapq.heappush(q, (cost, init_player_position, init_box_positions))
-	checked_states = { str((init_player_position, init_box_positions)):"" } # to reconstruct path
-	states_checked = 0
+	# to reconstruct path
+	paths = { str((init_player_position, init_box_positions)):"" } 
 	while len(q) > 0:
-		states_checked += 1
 	
 		_, player_pos, boxes_pos = heapq.heappop(q)
-		possible_states = possible_new_states(sokoban_map, player_pos, boxes_pos)
+		possible_states = possible_new_states(sokoban_map, 
+			player_pos, boxes_pos)
 
 		string_prev_state = str((player_pos, boxes_pos))
 		if len(possible_states) > 0 and possible_states[0] == -1:
-			print(states_checked)
-			return checked_states[string_prev_state] + name_of_move(player_pos, possible_states[1])
-		
+			last_move = name_of_move(player_pos, possible_states[1])
+			return paths[string_prev_state] + last_move
+				
 		for state in possible_states:
 			string_state = str(state)
-			if not (string_state in checked_states):
-				checked_states[string_state] = checked_states[string_prev_state] + name_of_move(player_pos, state[0])
+			if not (string_state in paths):
+				current_move = name_of_move(player_pos, state[0])
+				paths[string_state] = paths[string_prev_state] + current_move
 				cost = Aheuristic(sokoban_map, state[0], state[1])
-				heapq.heappush(q, (cost + len(checked_states[string_state]), state[0], state[1])) 
+				heapq.heappush(q, 
+					(cost + len(paths[string_state]), state[0], state[1]))
 				
 f = open("zad_input.txt", 'r')
 f_out = open("zad_output.txt", 'w')

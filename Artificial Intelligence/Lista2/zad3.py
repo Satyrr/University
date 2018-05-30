@@ -20,33 +20,43 @@ def bad_box_position(sokoban_map, box_position):
 		return False
 
 	surr_coords = np.array(box_position) + moves  
-	return not ((sokoban_map[tuple(surr_coords[0])] in 'G.' and sokoban_map[tuple(surr_coords[1])] in 'G.') or \
-				(sokoban_map[tuple(surr_coords[2])] in 'G.' and sokoban_map[tuple(surr_coords[3])] in 'G.'))
+	surr_coords = [tuple(c) for c in list(surr_coords)]
+	return not ((sokoban_map[surr_coords[0]] in 'G.' and sokoban_map[surr_coords[1]] in 'G.') or \
+				(sokoban_map[surr_coords[2]] in 'G.' and sokoban_map[surr_coords[3]] in 'G.'))
 
 
-def possible_new_states(sokoban_map, player_position, box_positions):
+def possible_new_states(sokoban_map, player_pos, box_positions):
 	moves = [(1,0), (-1,0), (0,1), (0,-1)]
 	new_states = []
-	checked_positions = {player_position:""}
-	q = deque([player_position])
+	checked_positions = {player_pos:""}
+	q = deque([player_pos])
 	while q:
-		player_position = q.pop()
+		player_pos = q.pop()
 		for move in moves:
-			new_player_pos = (player_position[0] + move[0], player_position[1] + move[1])
-			new_box_pos = (player_position[0] + 2*move[0], player_position[1] + 2*move[1])
+			new_player_pos = (player_pos[0] + move[0], player_pos[1] + move[1])
+			new_box_pos = (player_pos[0] + 2*move[0], player_pos[1] + 2*move[1])
 
-			if sokoban_map[new_player_pos] in 'G.' and not (new_player_pos in box_positions) \
-					and not new_player_pos in checked_positions:
-				checked_positions[new_player_pos] = checked_positions[player_position] + name_of_move(player_position, new_player_pos)
+			if sokoban_map[new_player_pos] in 'G.' and \
+				not new_player_pos in box_positions and \
+				not new_player_pos in checked_positions:
+
+				move_name = name_of_move(player_pos, new_player_pos)
+				checked_positions[new_player_pos] = \
+					checked_positions[player_pos] + move_name
 				q.appendleft(new_player_pos)
-			elif sokoban_map[new_player_pos] in 'G.' and (new_player_pos in box_positions) and\
-					sokoban_map[new_box_pos] in 'G.' and not (new_box_pos in box_positions) \
-					and not bad_box_position(sokoban_map, new_box_pos):	
 
-				new_box_positions = [pos for pos in box_positions if pos != new_player_pos]
+			elif sokoban_map[new_player_pos] in 'G.' and \
+				new_player_pos in box_positions and \
+				sokoban_map[new_box_pos] in 'G.' and \
+				not (new_box_pos in box_positions) and \
+				not bad_box_position(sokoban_map, new_box_pos):	
+
+				new_box_positions = [pos 
+					for pos in box_positions if pos != new_player_pos]
 				new_box_positions.append(new_box_pos)
 
-				path = checked_positions[player_position] + name_of_move(player_position, new_player_pos)
+				move_name = name_of_move(player_pos, new_player_pos)
+				path = checked_positions[player_pos] + move_name
 				if check_if_won(sokoban_map, new_box_positions):
 					return (-1, path)
 
@@ -69,23 +79,22 @@ def find_moves_A(sokoban_map, init_player_position, init_box_positions):
 	q = [] 
 	cost = Aheuristic(sokoban_map, init_player_position, init_box_positions)
 	heapq.heappush(q, (cost, init_player_position, init_box_positions))
-	checked_states = { (init_player_position, tuple(init_box_positions)):"" } # to reconstruct path
-	states_checked = 0
+	# to reconstruct path
+	paths = { (init_player_position, tuple(init_box_positions)):"" } 
 	while len(q) > 0:
-		states_checked += 1
 
 		_, player_pos, boxes_pos = heapq.heappop(q)
 		possible_states = possible_new_states(sokoban_map, player_pos, boxes_pos)
 
 		hashable_prev_state = (player_pos, tuple(boxes_pos))
 		if len(possible_states) > 0 and possible_states[0] == -1:
-			print(states_checked)
-			return checked_states[hashable_prev_state] + possible_states[1]
+			return paths[hashable_prev_state] + possible_states[1]
 
 		for state in possible_states:
 			hashable_state = (state[0], tuple(state[1]))
-			if not (hashable_state in checked_states):
-				checked_states[hashable_state] = checked_states[hashable_prev_state] + state[2]#name_of_move(player_pos, state[0])
+			if not (hashable_state in paths):
+				#name_of_move(player_pos, state[0])
+				paths[hashable_state] = paths[hashable_prev_state] + state[2]
 				cost = Aheuristic(sokoban_map, state[0], state[1])
 				heapq.heappush(q, (cost , state[0], state[1])) 
 				

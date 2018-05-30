@@ -1,15 +1,19 @@
-import numpy as np
 from collections import deque
+import random
 
-dirs = [(np.array((1,0)), 'D'), 
- 	(np.array((-1,0)), 'U'), 
-  	(np.array((0,1)), 'R'), 
-   	(np.array((0,-1)), 'L')]
+dirs = [((1,0), 'D'), 
+ 	((-1,0), 'U'), 
+  	((0,1), 'R'), 
+   	((0,-1), 'L')]
 
-def draw_map(commando_map, commando_destinations_mask, positions):
-	to_print = commando_map.copy()
-	to_print[positions[:,0], positions[:,1]] += 1
-	to_print[commando_destinations_mask == 0] += 2
+def draw_map(commando_map, commando_destinations, positions):
+	to_print = [[c for c in r] for r in commando_map]
+	for x,y in positions:
+		to_print[x][y] += 1
+	for i in range(len(commando_destinations)):
+		for j in range(len(commando_destinations[i])):
+			if commando_destinations[i][j] == 1:
+				to_print[i][j] += 2
 	print('*************')
 	for row in to_print:
 		r = ""
@@ -36,57 +40,46 @@ def reconstruct_path(predecessors, ending_pos):
 
 	return path
 
-def do_move_no_numpy(old_positions, move, commando_map):
+def do_move(old_positions, move, commando_map):
 	new_positions = set()
 	for pos in old_positions:
 		new_pos = (pos[0] + move[0], pos[1] + move[1])
-		if commando_map[new_pos[0], new_pos[1]] == 1:
+		if commando_map[new_pos[0]][new_pos[1]] == 1:
 			new_positions.add(new_pos)
 		else:
 			new_positions.add(pos)
 	return new_positions
 
-def do_move(old_positions, move, commando_map):
-	new_positions = old_positions + move
-
-	updated = commando_map[new_positions[:,0], new_positions[:,1]][:, None]
-	not_updated = (1 - updated).astype(int)
-
-	new_positions = np.unique(updated * new_positions + not_updated * old_positions, axis=0)
-	return new_positions
-
-def find_possible(commando_map, commando_destinations_mask, positions):
+def find_possible(commando_map, positions):
 	new_states = []
 
 	for move, direction in dirs:
-		new_positions = do_move_no_numpy(positions, move, commando_map)
+		new_positions = do_move(positions, move, commando_map)
 		new_states.append( (new_positions, direction) )
-
-		if target_num >= len(new_positions) and solved(new_positions, commando_destinations_mask):
-			return ('found', direction)
 
 	return new_states
 
 
-def solved(positions, commando_destinations_mask):
+def solved(positions, commando_destinations):
 	for pos in positions:
-		if commando_destinations_mask[pos[0], pos[1]] == 1:
+		if commando_destinations[pos[0]][pos[1]] == 0:
 			return False
 	return True
-
-import time 
-
-def find_path_bfs(commando_map, commando_destinations_mask, commando_positions):
-	commando_positions = list(map(tuple, commando_positions))
+	
+def find_path_bfs(commando_map, commando_destinations, commando_positions):
 	q = deque([commando_positions])
 	visited = { tuple(commando_positions) : None }
 	while q:
 		positions = q.pop()
 		
-		possible_states = find_possible(commando_map, commando_destinations_mask, positions)
+		possible_states = find_possible(commando_map, positions)
 
-		if len(possible_states) > 0 and possible_states[0] == 'found':
-			last_direction = possible_states[1]
+		solved_states = [len(x) <= target_num and solved(x, commando_destinations) 
+			for x, _ in possible_states]
+		
+		if any(solved_states):
+			_, last_direction = dirs[solved_states.index(True)]
+			draw_map(commando_map, commando_destinations, positions)
 			return reconstruct_path(visited, positions) + last_direction
 
 		for pos_arr, direction in possible_states:
@@ -109,8 +102,9 @@ def random_moves_greedy(positions, commando_map):
 				best_positions_num = len(new_positions)
 
 		if best_dir == None:
-			move, direction = dirs[np.random.randint(0, len(dirs))]
-			move_len = int(min(max(1, np.random.normal(3, 2)),10))
+			dir_idx = random.randint(0, len(dirs)-1)
+			move, direction = dirs[dir_idx]
+			move_len = int(min(max(1, random.normalvariate(3, 2)),10))
 			for i in range(move_len):
 				positions = do_move(positions, move, commando_map)
 				path += direction
@@ -123,10 +117,10 @@ def random_moves_greedy(positions, commando_map):
 	return positions, path
 
 def random_moves(positions, commando_map, moves_num):
-	path =""
+	path=""
 	while len(path) < moves_num:
-		move, direction = dirs[np.random.randint(0, len(dirs))]
-		move_len = int(min(max(1, np.random.normal(3, 2)),10))
+		move, direction = dirs[random.randint(0, len(dirs)-1)]
+		move_len = int(min(max(1, random.normalvariate(3, 2)),10))
 		for i in range(move_len):
 			positions = do_move(positions, move, commando_map)
 			path += direction
@@ -138,11 +132,11 @@ f_out = open('zad_output.txt', 'w')
 
 commando_map = []
 commando_starts = []
-commando_destinations_mask = []
+commando_destinations = []
 
-for line_number ,line in enumerate(f_in):
+for line_number, line in enumerate(f_in):
 	row = []
-	for letter_number, letter in enumerate(line):
+	for letter_num, letter in enumerate(line):
 		if letter == '#':
 			row.append(0)
 		elif letter in ' S':
@@ -150,27 +144,30 @@ for line_number ,line in enumerate(f_in):
 		elif letter in 'BG':
 			row.append(2)
 		if letter in 'SB':
-			commando_starts.append((line_number, letter_number))
-	commando_map.append([1 if letter > 0 else 0 for letter in row])
-	commando_destinations_mask.append([0 if letter > 1 else 1 for letter in row])
+			commando_starts.append((line_number, letter_num))
+	commando_map.append([1 if f > 0 else 0 for f in row])
+	commando_destinations.append([1 if f > 1 else 0 for f in row])
 
-commando_starts = np.array(commando_starts)
-commando_map = np.array(commando_map)
-commando_destinations_mask = np.array(commando_destinations_mask)
-target_num = commando_destinations_mask[commando_destinations_mask == 0].shape[0]
+target_num = sum([sum(r) for r in commando_destinations])
 
-commando_starts_init = commando_starts.copy()
+commando_starts_init = [tup for tup in commando_starts]
 path1 = ""
 path2 = ""
-while commando_starts.shape[0] > 2:
-	commando_starts = commando_starts_init.copy()
+while len(commando_starts) > 2:
+	commando_starts = [tup for tup in commando_starts_init]
 	commando_starts, path1 = random_moves_greedy(commando_starts, commando_map)
-	commando_starts_greedy = commando_starts.copy()
-	i = 0
-	while commando_starts.shape[0] > 2 and i < 40:  
-		commando_starts = commando_starts_greedy.copy()
-		commando_starts, path2 = random_moves(commando_starts, commando_map, 65)
-		i += 1
+	commando_starts_reduced = [tup for tup in commando_starts]
+	tries = 0
+	while len(commando_starts) > 2 and tries < 40:
+		tries += 1
+		commando_starts = [tup for tup in commando_starts_reduced]
+		commando_starts, path2 = random_moves(commando_starts,
+            commando_map,
+            65)
 
-path = path1 + path2 + find_path_bfs(commando_map, commando_destinations_mask, commando_starts)
+path = path1 + path2
+path += find_path_bfs(commando_map,
+    commando_destinations, 
+    commando_starts)
+
 f_out.write(path)
